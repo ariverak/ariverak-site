@@ -8,8 +8,15 @@
     "start": "next start"
   },
   "dependencies": {
+    "bulma": "^0.8.2",
+    "bulma-pro": "^0.1.8",
+    "classnames": "^2.2.6",
     "next": "9.3.5",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-dom": "16.13.1",
+    "react-jss": "^10.1.1"
+  },
+  "devDependencies": {
+    "node-sass": "^4.13.1"
   }
 }
