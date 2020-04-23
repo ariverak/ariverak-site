@@ -4,16 +4,22 @@ import { createUseStyles } from 'react-jss'
 
 const useStyles = createUseStyles({
 	subtitle: {
-		fontSize: 20,
-    fontWeight: '300',
+		fontSize: 20
   }
 })
 
-export default function Subtitle({text}) {
+export default function Subtitle({ children }) {
   const classes = useStyles();
   return (
-    <h1 className={classNames('is-size-4','is-italic','has-text-black',classes.subtitle)}>
-        { text }
+    <h1 className={
+      classNames(
+        'is-size-5',
+        'is-family-monospace',
+        'has-text-weight-medium',
+        'has-text-black',
+        classes.subtitle)
+      }>
+        { children }
     </h1>
   )
 }

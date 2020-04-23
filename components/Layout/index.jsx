@@ -1,9 +1,7 @@
-import Head from 'next/head'
+import Title from '@components/Title'
+import Subtitle from '@components/Subtitle'
 import { createUseStyles } from 'react-jss'
 import LeftCorner from './LeftCorner'
-
-const box = 200;
-const boxChild = 100;
 
 const useStyles = createUseStyles({
   root: {
@@ -36,23 +34,37 @@ const useStyles = createUseStyles({
       top: 60,
       left: 60,
       borderRadius: 20
+    },
+    '& $about': {
+      marginTop: 65,
+      margin: 20,
+      '& p': {
+        marginBottom: 20
+      }
     }
-  }
+  },
+  about:{}
 })
 
-export default function Layout({components}) {
+export default function Layout({ imageUrl, about, title, subtitle }) {
   const classes = useStyles();
   return (
     <div className={classes.root}>
       <div className={classes.right}>
         <LeftCorner />
-        <img src="https://avatars3.githubusercontent.com/u/29168528?s=400&u=5513d95e49917ca3c6b070bcdf2a40ecd53ab485&v=4" />
+        <img src={imageUrl} />
+        <div className={classes.about}>
+          <p className="is-family-monospace has-text-info is-size-4 has-text-weight-medium">SOBRE MI</p>
+          <p className="is-family-monospace has-text-left is-size-7">
+            { about }
+          </p>
+        </div>
       </div>
       <div style={{width: '100%',backgroundColor: '#ededed'}}>
         <div className={classes.top} />
         <div className={classes.content}>
-          {components.title}
-          {components.subtitle}
+          <Title>{ title }</Title>
+          <Subtitle>{ subtitle }</Subtitle>
         </div>
       </div>
     </div>
