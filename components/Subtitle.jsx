@@ -14,7 +14,6 @@ export default function Subtitle({ children }) {
     <h1 className={
       classNames(
         'is-size-5',
-        'is-family-monospace',
         'has-text-weight-medium',
         'has-text-black',
         classes.subtitle)

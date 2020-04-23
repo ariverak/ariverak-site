@@ -1,5 +1,6 @@
 import Title from '@components/Title'
 import Subtitle from '@components/Subtitle'
+import Education from '@components/Education'
 import { createUseStyles } from 'react-jss'
 import LeftCorner from './LeftCorner'
 
@@ -8,7 +9,8 @@ const useStyles = createUseStyles({
     width: '100%',
     display: 'inline-flex',
     backgroundColor: 'white',
-    padding: '40px 15px'
+    padding: '40px 15px',
+    zIndex: 1000
   },
   top: {
     backgroundColor: '#ededed',
@@ -46,7 +48,7 @@ const useStyles = createUseStyles({
   about:{}
 })
 
-export default function Layout({ imageUrl, about, title, subtitle }) {
+export default function Layout({ imageUrl, about, title, subtitle, education }) {
   const classes = useStyles();
   return (
     <div className={classes.root}>
@@ -54,8 +56,8 @@ export default function Layout({ imageUrl, about, title, subtitle }) {
         <LeftCorner />
         <img src={imageUrl} />
         <div className={classes.about}>
-          <p className="is-family-monospace has-text-info is-size-4 has-text-weight-medium">SOBRE MI</p>
-          <p className="is-family-monospace has-text-left is-size-7">
+          <p className="has-text-info is-size-4 has-text-weight-medium">SOBRE MI</p>
+          <p className="has-text-left is-size-7">
             { about }
           </p>
         </div>
@@ -65,6 +67,7 @@ export default function Layout({ imageUrl, about, title, subtitle }) {
         <div className={classes.content}>
           <Title>{ title }</Title>
           <Subtitle>{ subtitle }</Subtitle>
+          <Education data={education} />
         </div>
       </div>
     </div>

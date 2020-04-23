@@ -12,7 +12,7 @@ const useStyles = createUseStyles({
 export default function Title({ children }) {
   const classes = useStyles();
   return (
-    <h1 className={classNames('is-family-monospace','has-text-black','is-uppercase',classes.title)}>
+    <h1 className={classNames('has-text-black','is-uppercase',classes.title)}>
         { children }
     </h1>
   )
