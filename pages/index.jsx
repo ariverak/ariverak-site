@@ -5,7 +5,10 @@ import { createUseStyles } from 'react-jss'
 const useStyles = createUseStyles({
   root: {
     padding: '0 200px',
-    background: '#ccc9c9'
+    background: '#ccc9c9',
+    '@media (max-width: 1024px)': {
+      padding: 0
+    }
   }
 })
 
@@ -15,6 +18,7 @@ export default function Home() {
     <div className={classes.root}>
       <Head>
         <title>Ariverak - Curriculum</title>
+        <meta name="viewport" content="width=device-width;user-scalable=no" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
