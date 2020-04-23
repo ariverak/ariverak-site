@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import Title from '@components/Title';
 import Subtitle from '@components/Subtitle';
 import Education from '@components/Education';
@@ -57,7 +58,7 @@ export default function Layout({
 }) {
   const classes = useStyles();
   return (
-    <div className={classes.root}>
+    <div className={classNames('panel', classes.root)}>
       <div className={classes.right}>
         <LeftCorner />
         <img alt="" src={imageUrl} />

@@ -4,7 +4,8 @@ import { createUseStyles } from 'react-jss';
 
 const useStyles = createUseStyles({
   subtitle: {
-    fontSize: 20
+    fontSize: 20,
+    marginBottom: 20
   }
 });
 
