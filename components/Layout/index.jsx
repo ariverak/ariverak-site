@@ -1,8 +1,8 @@
-import Title from '@components/Title'
-import Subtitle from '@components/Subtitle'
-import Education from '@components/Education'
-import { createUseStyles } from 'react-jss'
-import LeftCorner from './LeftCorner'
+import Title from '@components/Title';
+import Subtitle from '@components/Subtitle';
+import Education from '@components/Education';
+import { createUseStyles } from 'react-jss';
+import LeftCorner from './LeftCorner';
 
 const useStyles = createUseStyles({
   root: {
@@ -14,11 +14,11 @@ const useStyles = createUseStyles({
   },
   top: {
     backgroundColor: '#ededed',
-		width: '100%',
+    width: '100%',
     height: 60
   },
   content: {
-		width: '100%',
+    width: '100%',
     minHeight: 'calc(100vh - 60px)',
     backgroundColor: 'white',
     borderTopLeftRadius: '10%',
@@ -26,8 +26,8 @@ const useStyles = createUseStyles({
   },
   right: {
     position: 'relative',
-		backgroundColor: '#ededed',
-		width: 400,
+    backgroundColor: '#ededed',
+    width: 400,
     minHeight: '100vh',
     '& img': {
       position: 'absolute',
@@ -37,7 +37,7 @@ const useStyles = createUseStyles({
       left: 60,
       borderRadius: 20
     },
-    '& $about': {
+    '& $about': {
       marginTop: 65,
       margin: 20,
       '& p': {
@@ -45,31 +45,37 @@ const useStyles = createUseStyles({
       }
     }
   },
-  about:{}
-})
+  about: {}
+});
 
-export default function Layout({ imageUrl, about, title, subtitle, education }) {
+export default function Layout({
+  imageUrl,
+  about,
+  title,
+  subtitle,
+  education
+}) {
   const classes = useStyles();
   return (
     <div className={classes.root}>
       <div className={classes.right}>
         <LeftCorner />
-        <img src={imageUrl} />
+        <img alt="" src={imageUrl} />
         <div className={classes.about}>
-          <p className="has-text-info is-size-4 has-text-weight-medium">SOBRE MI</p>
-          <p className="has-text-left is-size-7">
-            { about }
+          <p className="has-text-info is-size-4 has-text-weight-medium">
+            SOBRE MI
           </p>
+          <p className="has-text-left is-size-7">{about}</p>
         </div>
       </div>
-      <div style={{width: '100%',backgroundColor: '#ededed'}}>
+      <div style={{ width: '100%', backgroundColor: '#ededed' }}>
         <div className={classes.top} />
         <div className={classes.content}>
-          <Title>{ title }</Title>
-          <Subtitle>{ subtitle }</Subtitle>
+          <Title>{title}</Title>
+          <Subtitle>{subtitle}</Subtitle>
           <Education data={education} />
         </div>
       </div>
     </div>
-  )
+  );
 }
