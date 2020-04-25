@@ -49,8 +49,7 @@ export default function Home() {
             subtitle="Ingeniero de software"
             education={[
               {
-                university:
-                  'Instituto Profesional AIEP de la Universidad Andrés Bello',
+                university: 'Instituto Profesional AIEP',
                 yearsBetween: [2014, 2017],
                 career: 'Ingeniería de Ejecución en Informática.'
               }

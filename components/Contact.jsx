@@ -34,8 +34,8 @@ export default function Contact({ data }) {
       >
         CONTACTO
       </p>
-      {data.map(contactInfo => (
-        <div className={classes.info}>
+      {data.map((contactInfo, i) => (
+        <div key={i} className={classes.info}>
           <p className="is-uppercase has-text-weight-semibold">
             {contactInfo.key}
           </p>

@@ -36,8 +36,11 @@ export default function Contact({ data }) {
       </p>
       <div className={classes.info}>
         <div className="columns">
-          {data.map(socialInfo => (
-            <span className="column is-half icon is-inline-flex level-left">
+          {data.map((socialInfo, i) => (
+            <span
+              key={i}
+              className="column is-half icon is-inline-flex level-left"
+            >
               <i className={`fab fa-${socialInfo.icon}-square is-size-4`} />
               <a
                 href={socialInfo.link}

@@ -26,7 +26,7 @@ const useStyles = createUseStyles({
     minHeight: 'calc(100vh - 60px)',
     backgroundColor: 'white',
     borderTopLeftRadius: '10%',
-    padding: '8%'
+    padding: '5% 10%'
   },
   right: {
     position: 'relative',
