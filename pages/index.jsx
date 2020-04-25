@@ -30,6 +30,21 @@ export default function Home() {
             Soy una persona pro activa, me gustan las nuevas tecnologías y los desafíos, e desarrollado variadas soluciones de software desde aplicaciones móviles, web y servicios backend, me desenvuelvo muy bien en el frontend como en el backend.
             No obstante siempre estoy aprendiendo cosas nuevas.        
           `}
+            contact={[
+              { key: 'Correo Electrónico', value: 'jrivera.v@outlook.com' }
+            ]}
+            social={[
+              {
+                icon: 'github',
+                name: 'Github',
+                link: 'https://github.com/ariverak'
+              },
+              {
+                icon: 'instagram',
+                name: 'Instagram',
+                link: 'https://www.instagram.com/ariverak'
+              }
+            ]}
             title="juan andrés rivera vargas"
             subtitle="Ingeniero de software"
             education={[

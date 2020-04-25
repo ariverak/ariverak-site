@@ -1,5 +1,7 @@
 import classNames from 'classnames';
 import Title from '@components/Title';
+import Contact from '@components/Contact';
+import Social from '@components/Social';
 import Subtitle from '@components/Subtitle';
 import Education from '@components/Education';
 import Experience from '@components/Experience';
@@ -24,7 +26,7 @@ const useStyles = createUseStyles({
     minHeight: 'calc(100vh - 60px)',
     backgroundColor: 'white',
     borderTopLeftRadius: '10%',
-    padding: '10%'
+    padding: '8%'
   },
   right: {
     position: 'relative',
@@ -53,6 +55,8 @@ const useStyles = createUseStyles({
 export default function Layout({
   imageUrl,
   about,
+  contact,
+  social,
   title,
   subtitle,
   education,
@@ -70,6 +74,8 @@ export default function Layout({
           </p>
           <p className="has-text-left is-size-7">{about}</p>
         </div>
+        <Contact data={contact} />
+        <Social data={social} />
       </div>
       <div style={{ width: '100%', backgroundColor: '#ededed' }}>
         <div className={classes.top} />

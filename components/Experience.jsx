@@ -25,7 +25,7 @@ export default function Education({ data }) {
         <span className="icon">
           <i className="fas fa-laptop" />
         </span>
-        <h3 className="has-text-black is-size-4">EXPERIENCIA</h3>
+        <h3 className="has-text-black is-size-4">EXPERIENCIA PROFESIONAL</h3>
       </div>
       <hr className="has-background-info" />
       {data.map((experience, i) => (
