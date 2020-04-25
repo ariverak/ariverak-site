@@ -6,6 +6,7 @@ import Subtitle from '@components/Subtitle';
 import Education from '@components/Education';
 import Experience from '@components/Experience';
 import { createUseStyles } from 'react-jss';
+import { motion } from 'framer-motion';
 import LeftCorner from './LeftCorner';
 
 const useStyles = createUseStyles({
@@ -35,10 +36,10 @@ const useStyles = createUseStyles({
     minHeight: '100vh',
     '& img': {
       position: 'absolute',
-      width: 180,
-      height: 180,
-      top: 60,
-      left: 60,
+      width: 90,
+      height: 90,
+      top: 100,
+      left: 100,
       borderRadius: 20
     },
     '& $about': {
@@ -51,6 +52,17 @@ const useStyles = createUseStyles({
   },
   about: {}
 });
+
+export const Image = ({ imageUrl }) => (
+  <motion.img
+    alt=""
+    src={imageUrl}
+    animate={{ scale: 2 }}
+    transition={{ duration: 0.5 }}
+    whileHover={{ scale: 1.8 }}
+    whileTap={{ scale: 1.5 }}
+  />
+);
 
 export default function Layout({
   imageUrl,
@@ -67,7 +79,7 @@ export default function Layout({
     <div className={classNames('panel', classes.root)}>
       <div className={classes.right}>
         <LeftCorner />
-        <img alt="" src={imageUrl} />
+        <Image imageUrl={imageUrl} />
         <div className={classes.about}>
           <p className="has-text-info is-size-4 has-text-weight-medium">
             SOBRE MI
