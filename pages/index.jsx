@@ -13,12 +13,12 @@ export default function Home() {
         <meta
           name="og:title"
           property="og:title"
-          content="Curriculum - Juan Rivera Vargas"
+          content="Juan Rivera Vargas"
         />
         <meta
           name="og:description"
           property="og:description"
-          content="Este curriculum esta hecho 100% a mano usando nextjs"
+          content="Este curriculum esta hecho 100% a mano :)"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
