@@ -35,14 +35,19 @@ export default function Home() {
             ]}
             social={[
               {
-                icon: 'github',
+                icon: 'github-square',
                 name: 'Github',
                 link: 'https://github.com/ariverak'
               },
               {
-                icon: 'instagram',
+                icon: 'instagram-square',
                 name: 'Instagram',
                 link: 'https://www.instagram.com/ariverak'
+              },
+              {
+                icon: 'linkedin',
+                name: 'Linkedin',
+                link: 'https://www.linkedin.com/in/ariverak/'
               }
             ]}
             title="juan andrés rivera vargas"

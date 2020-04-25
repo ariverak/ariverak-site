@@ -12,7 +12,8 @@ const useStyles = createUseStyles({
       fontSize: 14
     },
     '& span': {
-      fontSize: 12
+      fontSize: 12,
+      marginBottom: 20
     }
   },
   title: {
@@ -35,13 +36,13 @@ export default function Contact({ data }) {
         REDES SOCIALES
       </p>
       <div className={classes.info}>
-        <div className="columns">
+        <div className="columns is-multiline">
           {data.map((socialInfo, i) => (
             <span
               key={i}
               className="column is-half icon is-inline-flex level-left"
             >
-              <i className={`fab fa-${socialInfo.icon}-square is-size-4`} />
+              <i className={`fab fa-${socialInfo.icon} is-size-4`} />
               <a
                 href={socialInfo.link}
                 target="_blank"
