@@ -2,6 +2,7 @@ import classNames from 'classnames';
 import Title from '@components/Title';
 import Subtitle from '@components/Subtitle';
 import Education from '@components/Education';
+import Experience from '@components/Experience';
 import { createUseStyles } from 'react-jss';
 import LeftCorner from './LeftCorner';
 
@@ -54,7 +55,8 @@ export default function Layout({
   about,
   title,
   subtitle,
-  education
+  education,
+  experience
 }) {
   const classes = useStyles();
   return (
@@ -75,6 +77,7 @@ export default function Layout({
           <Title>{title}</Title>
           <Subtitle>{subtitle}</Subtitle>
           <Education data={education} />
+          <Experience data={experience} />
         </div>
       </div>
     </div>

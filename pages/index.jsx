@@ -29,6 +29,26 @@ export default function Home() {
                 career: 'Ingeniería de Ejecución en Informática.'
               }
             ]}
+            experience={[
+              {
+                workplace: 'Cooprinsem',
+                yearsBetween: [2016, 2017],
+                description:
+                  'Desarrollo de Software para el área agrícola de Osorno'
+              },
+              {
+                workplace: 'GroupBI',
+                yearsBetween: [2018, 2019],
+                description:
+                  'Encargado de llevar acabo el análisis y desarrollo de aplicaciones web, creación de bases de datos, API Restfull con NodeJS, maquetación, diseño y programación con ReactJS.'
+              },
+              {
+                workplace: 'Soho',
+                yearsBetween: [2019, 2020],
+                description:
+                  'Desarrollador fullstack remoto para importante consultora experta en experiencia de usuario (UX)'
+              }
+            ]}
           />
         </Background>
       </main>

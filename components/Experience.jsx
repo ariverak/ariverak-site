@@ -23,18 +23,18 @@ export default function Education({ data }) {
     <div className={classes.root}>
       <div className={classes.title}>
         <span className="icon">
-          <i className="fas fa-graduation-cap" />
+          <i className="fas fa-laptop" />
         </span>
-        <h3 className="has-text-black is-size-4">EDUCACIÓN</h3>
+        <h3 className="has-text-black is-size-4">EXPERIENCIA</h3>
       </div>
       <hr className="has-background-info" />
-      {data.map((education, i) => (
+      {data.map((experience, i) => (
         <div key={i}>
           <div className="has-text-black has-text-weight-bold">
-            {education.university}
+            {experience.workplace}
           </div>
-          <div>{education.yearsBetween.join(' - ')}</div>
-          <div className="has-text-weight-bold">{education.career}</div>
+          <div>{experience.yearsBetween.join(' - ')}</div>
+          <div className="has-text-weight-bold">{experience.description}</div>
           <br />
         </div>
       ))}
