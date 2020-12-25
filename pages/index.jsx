@@ -8,7 +8,7 @@ export default function Home() {
     <>
       <Head>
         <title>Ariverak - Curriculum</title>
-        <meta name='viewport' content='width=device-width,user-scalable=no' />
+        <meta name='viewport' content='width=device-width;user-scalable=no' />
         <meta property='og:image' content='/juan-rivera-vargas.jpg' />
         <meta
           name='og:title'
