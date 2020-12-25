@@ -8,7 +8,7 @@ export default function Home() {
     <>
       <Head>
         <title>Ariverak - Curriculum</title>
-        <meta name='viewport' content='width=device-width;user-scalable=no' />
+        <meta name='viewport' content='width=device-width,user-scalable=no' />
         <meta property='og:image' content='/juan-rivera-vargas.jpg' />
         <meta
           name='og:title'
@@ -27,7 +27,7 @@ export default function Home() {
           <Layout
             imageUrl='/me.png'
             about={`
-              Soy una persona pro activa, me gustan las nuevas tecnologías y los desafíos :D
+              Soy una persona pro activa, me gustan las nuevas tecnologías y los desafíos.
               En mi corta carrera e desarrollado variadas soluciones de software desde aplicaciones móviles, web y desarrollo backend.
               No obstante siempre intento estar a la vanguardia aprendiendo cosas nuevas.        
             `}
@@ -62,10 +62,15 @@ export default function Home() {
             ]}
             experience={[
               {
-                workplace: 'Cooprinsem',
-                yearsBetween: [2016, 2017],
+                workplace: 'Drivetech',
+                yearsBetween: [2020, 'Actualidad'],
+                description: `Desarrollo de aplicaciones en tiempo real con React.`,
+              },
+              {
+                workplace: 'Soho',
+                yearsBetween: [2019, 2020],
                 description:
-                  'Desarrollo de Software para el área agrícola de Osorno',
+                  'Desarrollador fullstack remoto para importante consultora experta en experiencia de usuario (UX)',
               },
               {
                 workplace: 'GroupBI',
@@ -74,10 +79,10 @@ export default function Home() {
                   'Encargado de llevar acabo el análisis y desarrollo de aplicaciones web, creación de bases de datos, API Restfull con NodeJS, maquetación, diseño y programación con ReactJS.',
               },
               {
-                workplace: 'Soho',
-                yearsBetween: [2019, 2020],
+                workplace: 'Cooprinsem',
+                yearsBetween: [2016, 2017],
                 description:
-                  'Desarrollador fullstack remoto para importante consultora experta en experiencia de usuario (UX)',
+                  'Desarrollo de Software para el área agrícola de Osorno',
               },
             ]}
           />

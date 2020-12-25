@@ -4,9 +4,14 @@ import { createUseStyles } from 'react-jss';
 import PropTypes from 'prop-types';
 
 const useStyles = createUseStyles({
+  '@keyframes fadeAnimation': {
+    from: { opacity: 0 },
+    to: { opacity: 1 },
+  },
   title: {
     fontWeight: '400',
     fontSize: 60,
+    animation: '$fadeAnimation 4000ms',
   },
 });
 

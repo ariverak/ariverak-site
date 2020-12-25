@@ -112,7 +112,12 @@ function Layout({
 Layout.propTypes = {
   imageUrl: PropTypes.string,
   about: PropTypes.string,
-  contact: PropTypes.string,
+  contact: PropTypes.arrayOf(
+    PropTypes.shape({
+      key: PropTypes.string,
+      value: PropTypes.string,
+    }),
+  ),
   social: PropTypes.array,
   title: PropTypes.string,
   subtitle: PropTypes.string,
