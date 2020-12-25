@@ -1,40 +1,40 @@
 import React from 'react';
-// import classNames from 'classnames';
 import { createUseStyles } from 'react-jss';
+import PropTypes from 'prop-types';
 
 const useStyles = createUseStyles({
   root: {
     '& hr': {
-      margin: '10px 0'
-    }
+      margin: '10px 0',
+    },
   },
   title: {
     display: 'inline-flex',
     alignItems: 'center',
     '& span': {
-      marginRight: 10
-    }
-  }
+      marginRight: 10,
+    },
+  },
 });
 
-export default function Education({ data }) {
+function Education({ data }) {
   const classes = useStyles();
   return (
     <div className={classes.root}>
       <div className={classes.title}>
-        <span className="icon">
-          <i className="fas fa-graduation-cap" />
+        <span className='icon'>
+          <i className='fas fa-graduation-cap' />
         </span>
-        <h3 className="has-text-black is-size-4">EDUCACIÓN</h3>
+        <h3 className='has-text-black is-size-4'>EDUCACIÓN</h3>
       </div>
-      <hr className="has-background-info" />
+      <hr className='has-background-info' />
       {data.map((education, i) => (
         <div key={i}>
-          <div className="has-text-black has-text-weight-bold">
+          <div className='has-text-black has-text-weight-bold'>
             {education.university}
           </div>
           <div>{education.yearsBetween.join(' - ')}</div>
-          <div className="has-text-weight-bold">{education.career}</div>
+          <div className='has-text-weight-bold'>{education.career}</div>
           <br />
         </div>
       ))}
@@ -42,3 +42,9 @@ export default function Education({ data }) {
     </div>
   );
 }
+
+Education.propTypes = {
+  data: PropTypes.array,
+};
+
+export default Education;

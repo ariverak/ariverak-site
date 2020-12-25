@@ -1,15 +1,17 @@
+import React from 'react';
 import Particles from 'react-particles-js';
 import classNames from 'classnames';
 import { createUseStyles } from 'react-jss';
 import particlesConfig from '@config/particles.json';
+import PropTypes from 'prop-types';
 
 const useStyles = createUseStyles({
   root: {
     padding: '0 200px',
     background: '#232741',
     '@media (max-width: 1024px)': {
-      padding: 0
-    }
+      padding: 0,
+    },
   },
   particles: {
     pointerEvents: 'none',
@@ -18,10 +20,10 @@ const useStyles = createUseStyles({
     left: 0,
     right: 0,
     bottom: 0,
-    zIndex: 0
-  }
+    zIndex: 0,
+  },
 });
-export default function Background({ children }) {
+function Background({ children }) {
   const classes = useStyles();
   return (
     <div className={classNames('is-relative', classes.root)}>
@@ -30,3 +32,9 @@ export default function Background({ children }) {
     </div>
   );
 }
+
+Background.propTypes = {
+  children: PropTypes.node,
+};
+
+export default Background;

@@ -1,3 +1,4 @@
+import React from 'react';
 import classNames from 'classnames';
 import Title from '@components/Title';
 import Contact from '@components/Contact';
@@ -7,6 +8,7 @@ import Education from '@components/Education';
 import Experience from '@components/Experience';
 import { createUseStyles } from 'react-jss';
 import { motion } from 'framer-motion';
+import PropTypes from 'prop-types';
 import LeftCorner from './LeftCorner';
 
 const useStyles = createUseStyles({
@@ -15,19 +17,19 @@ const useStyles = createUseStyles({
     display: 'inline-flex',
     backgroundColor: 'white',
     padding: '40px 15px',
-    zIndex: 1000
+    zIndex: 1000,
   },
   top: {
     backgroundColor: '#ededed',
     width: '100%',
-    height: 60
+    height: 60,
   },
   content: {
     width: '100%',
     minHeight: 'calc(100vh - 60px)',
     backgroundColor: 'white',
     borderTopLeftRadius: '10%',
-    padding: '5% 10%'
+    padding: '5% 10%',
   },
   right: {
     position: 'relative',
@@ -40,22 +42,23 @@ const useStyles = createUseStyles({
       height: 90,
       top: 100,
       left: 100,
-      borderRadius: 20
+      borderRadius: 20,
+      objectFit: 'cover',
     },
     '& $about': {
       marginTop: 65,
       margin: 20,
       '& p': {
-        marginBottom: 20
-      }
-    }
+        marginBottom: 20,
+      },
+    },
   },
-  about: {}
+  about: {},
 });
 
 export const Image = ({ imageUrl }) => (
   <motion.img
-    alt=""
+    alt=''
     src={imageUrl}
     animate={{ scale: 2 }}
     transition={{ duration: 0.5 }}
@@ -64,7 +67,11 @@ export const Image = ({ imageUrl }) => (
   />
 );
 
-export default function Layout({
+Image.propTypes = {
+  imageUrl: PropTypes.string,
+};
+
+function Layout({
   imageUrl,
   about,
   contact,
@@ -72,7 +79,7 @@ export default function Layout({
   title,
   subtitle,
   education,
-  experience
+  experience,
 }) {
   const classes = useStyles();
   return (
@@ -81,10 +88,10 @@ export default function Layout({
         <LeftCorner />
         <Image imageUrl={imageUrl} />
         <div className={classes.about}>
-          <p className="has-text-info is-size-4 has-text-weight-medium">
+          <p className='has-text-info is-size-4 has-text-weight-medium'>
             SOBRE MI
           </p>
-          <p className="has-text-left is-size-7">{about}</p>
+          <p className='has-text-left is-size-7'>{about}</p>
         </div>
         <Contact data={contact} />
         <Social data={social} />
@@ -101,3 +108,16 @@ export default function Layout({
     </div>
   );
 }
+
+Layout.propTypes = {
+  imageUrl: PropTypes.string,
+  about: PropTypes.string,
+  contact: PropTypes.string,
+  social: PropTypes.array,
+  title: PropTypes.string,
+  subtitle: PropTypes.string,
+  education: PropTypes.array,
+  experience: PropTypes.array,
+};
+
+export default Layout;

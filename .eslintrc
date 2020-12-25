@@ -1,7 +1,0 @@
-{
-  "ignorePatterns": ["next.config.js"],
-  "rules": {
-    "import/no-unresolved": "off"
-  },
-  "extends": ["nextjs", "plugin:jsx-a11y/recommended"]
-}
