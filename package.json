@@ -19,7 +19,8 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-jss": "10.1.1",
-    "react-particles-js": "^3.1.0"
+    "react-particles-js": "^3.1.0",
+    "react-whatsapp-widget": "^1.2.1"
   },
   "devDependencies": {
     "babel-eslint": "^9.0.0",

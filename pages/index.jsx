@@ -2,6 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import Layout from '@components/Layout';
 import Background from '@components/Background';
+import WhatsAppWidget from 'react-whatsapp-widget';
 
 export default function Home() {
   return (
@@ -87,6 +88,13 @@ export default function Home() {
             ]}
           />
         </Background>
+        <WhatsAppWidget
+          sendButton='Enviar'
+          companyName='ariverak'
+          message='Hola, si quires contactarme, enviame un mensaje.'
+          textReplyTime='En Linea'
+          phoneNumber='+56965142583'
+        />
       </main>
     </>
   );
