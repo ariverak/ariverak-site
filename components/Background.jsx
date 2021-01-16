@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 
 const useStyles = createUseStyles({
   root: {
-    zIndex: -1,
+    zIndex: 1,
     padding: '0 200px',
     background: '#232741',
     '@media (max-width: 1024px)': {
@@ -15,8 +15,8 @@ const useStyles = createUseStyles({
     },
   },
   particles: {
-    zIndex: -1,
-    pointerEvents: 'none',
+    zIndex: -100,
+    // pointerEvents: 'none',
     position: 'absolute',
     top: 0,
     left: 0,
