@@ -15,7 +15,7 @@
     "bulma-pro": "^0.1.8",
     "classnames": "^2.2.6",
     "framer-motion": "^1.10.3",
-    "next": "^10.0.4",
+    "next": "^11.1.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-jss": "10.1.1",
