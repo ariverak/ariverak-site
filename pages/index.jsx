@@ -26,14 +26,15 @@ export default function Home() {
       <main>
         <Background>
           <Layout
-            imageUrl='/me.png'
+            imageUrl='/me.jpg'
             about={`
               Soy una persona pro activa, me gustan las nuevas tecnologías y los desafíos.
               En mi corta carrera e desarrollado variadas soluciones de software desde aplicaciones móviles, web y desarrollo backend.
               No obstante siempre intento estar a la vanguardia aprendiendo cosas nuevas.        
             `}
             contact={[
-              { key: 'Correo Electrónico', value: 'jrivera.v@outlook.com' },
+              { key: 'Correo Personal', value: 'jrivera.v@outlook.com' },
+              { key: 'Correo Electrónico', value: 'andres.rivera@rappi.com' },
             ]}
             social={[
               {
@@ -52,7 +53,7 @@ export default function Home() {
                 link: 'https://www.linkedin.com/in/ariverak/',
               },
             ]}
-            title='juan andrés rivera vargas'
+            title='juan andrés rivera'
             subtitle='Ingeniero de software'
             education={[
               {
@@ -63,8 +64,13 @@ export default function Home() {
             ]}
             experience={[
               {
+                workplace: 'Rappi',
+                yearsBetween: [2021, 'Actualidad'],
+                description: `Ingeniero frontend en rappi turbo`,
+              },
+              {
                 workplace: 'Drivetech',
-                yearsBetween: [2020, 'Actualidad'],
+                yearsBetween: [2020, 2021],
                 description: `Desarrollo de aplicaciones en tiempo real con React.`,
               },
               {
