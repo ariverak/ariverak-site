@@ -67,29 +67,38 @@ export default function Home() {
                 workplace: 'Rappi',
                 yearsBetween: [2021, 'Actualidad'],
                 description: `Ingeniero frontend en rappi turbo`,
+                logo: '/companies/rappi.png',
+                link: 'https://www.rappi.cl/'
               },
               {
                 workplace: 'Drivetech',
                 yearsBetween: [2020, 2021],
                 description: `Desarrollo de aplicaciones en tiempo real con React.`,
+                logo: '/companies/drivetech.png',
+                link: 'https://www.drivetech.pro/'
               },
               {
                 workplace: 'Soho',
                 yearsBetween: [2019, 2020],
                 description:
                   'Desarrollador fullstack remoto para importante consultora experta en experiencia de usuario (UX)',
+                logo: '/companies/soho.png',
+                link: 'https://soho.cl/'
               },
               {
                 workplace: 'GroupBI',
                 yearsBetween: [2018, 2019],
                 description:
                   'Encargado de llevar acabo el análisis y desarrollo de aplicaciones web, creación de bases de datos, API Restfull con NodeJS, maquetación, diseño y programación con ReactJS.',
+                logo: '/companies/groupbi.png',
               },
               {
                 workplace: 'Cooprinsem',
                 yearsBetween: [2016, 2017],
                 description:
                   'Desarrollo de Software para el área agrícola de Osorno',
+                logo: '/companies/cooprinsem.png',
+                link: 'https://www.cooprinsem.cl/'
               },
             ]}
           />

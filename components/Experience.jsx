@@ -1,5 +1,6 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
+import Image from 'next/image';
 import PropTypes from 'prop-types';
 
 const useStyles = createUseStyles({
@@ -13,6 +14,17 @@ const useStyles = createUseStyles({
     alignItems: 'center',
     '& span': {
       marginRight: 10,
+    },
+  },
+  experienceTitle: {
+    display: 'flex',
+    alignItems: 'center',
+    paddingBottom: 5,
+    '& img': {
+      borderRadius: '50%',
+    },
+    '& .workplace': {
+      margin: '0 10px',
     },
   },
 });
@@ -30,9 +42,19 @@ function Experience({ data }) {
       <hr className='has-background-info' />
       {data.map((experience, i) => (
         <div key={i}>
-          <div className='has-text-black has-text-weight-bold'>
-            {experience.workplace}
-          </div>
+          <a
+            className='is-inline'
+            href={experience.link || '#'}
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            <div className={classes.experienceTitle}>
+              <Image alt='' src={experience.logo} width={50} height={50} />
+              <h5 className='workplace has-text-black has-text-weight-bold'>
+                {experience.workplace}
+              </h5>
+            </div>
+          </a>
           <div>{experience.yearsBetween.join(' - ')}</div>
           <div className='has-text-weight-bold'>{experience.description}</div>
           <br />
