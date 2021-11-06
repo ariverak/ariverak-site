@@ -9,7 +9,7 @@ export default function Home() {
     <>
       <Head>
         <title>Ariverak - Curriculum</title>
-        <meta name='viewport' content='width=device-width;user-scalable=no' />
+        <meta name='viewport' content='width=device-width, initial-scale=1' />
         <meta property='og:image' content='/juan-rivera-vargas.jpg' />
         <meta
           name='og:title'
@@ -75,7 +75,7 @@ export default function Home() {
                 yearsBetween: [2020, 2021],
                 description: `Desarrollo de aplicaciones en tiempo real con React.`,
                 logo: '/companies/drivetech.png',
-                link: 'https://www.drivetech.pro/'
+                link: 'https://www.drivetech.pro/',
               },
               {
                 workplace: 'Soho',
@@ -83,7 +83,7 @@ export default function Home() {
                 description:
                   'Desarrollador fullstack remoto para importante consultora experta en experiencia de usuario (UX)',
                 logo: '/companies/soho.png',
-                link: 'https://soho.cl/'
+                link: 'https://soho.cl/',
               },
               {
                 workplace: 'GroupBI',
@@ -98,7 +98,7 @@ export default function Home() {
                 description:
                   'Desarrollo de Software para el área agrícola de Osorno',
                 logo: '/companies/cooprinsem.png',
-                link: 'https://www.cooprinsem.cl/'
+                link: 'https://www.cooprinsem.cl/',
               },
             ]}
           />

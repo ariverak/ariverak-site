@@ -7,6 +7,7 @@ const useStyles = createUseStyles({
   root: {
     marginTop: 30,
     margin: 20,
+    width: '100%',
   },
   info: {
     marginBottom: 10,
@@ -16,6 +17,9 @@ const useStyles = createUseStyles({
     '& span': {
       fontSize: 12,
       marginBottom: 20,
+    },
+    '& .info': {
+      flexDirection: 'column',
     },
   },
   title: {
@@ -32,13 +36,13 @@ function Contact({ data }) {
           'has-text-info',
           'is-size-4',
           'has-text-weight-medium',
-          classes.title,
+          classes.title
         )}
       >
         REDES SOCIALES
       </p>
       <div className={classes.info}>
-        <div className='columns is-multiline'>
+        <div className='columns is-multiline is-flex-mobile info'>
           {data.map((socialInfo, i) => (
             <span
               key={i}

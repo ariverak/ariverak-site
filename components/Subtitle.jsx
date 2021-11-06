@@ -16,9 +16,10 @@ function Subtitle({ children }) {
     <h1
       className={classNames(
         'is-size-5',
+        'is-size-6-mobile',
         'has-text-weight-medium',
         'has-text-black',
-        classes.subtitle,
+        classes.subtitle
       )}
     >
       {children}

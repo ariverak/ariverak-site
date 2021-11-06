@@ -38,6 +38,7 @@ function Education({ data }) {
           <br />
         </div>
       ))}
+
       {/* {yearsLabel} */}
     </div>
   );

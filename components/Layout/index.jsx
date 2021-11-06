@@ -10,6 +10,12 @@ import { createUseStyles } from 'react-jss';
 import { motion } from 'framer-motion';
 import PropTypes from 'prop-types';
 import LeftCorner from './LeftCorner';
+import MobileFooter from './MobileFooter';
+
+const avatarProps = {
+  borderRadius: 20,
+  objectFit: 'cover',
+};
 
 const useStyles = createUseStyles({
   root: {
@@ -42,8 +48,7 @@ const useStyles = createUseStyles({
       height: 90,
       top: 100,
       left: 100,
-      borderRadius: 20,
-      objectFit: 'cover',
+      ...avatarProps,
     },
     '& $about': {
       marginTop: 65,
@@ -82,27 +87,37 @@ function Layout({
   experience,
 }) {
   const classes = useStyles();
+
+  const aboutMe = (
+    <div className={classes.about}>
+      <p className='has-text-info is-size-4 has-text-weight-medium'>SOBRE MI</p>
+      <p className='has-text-left is-size-7'>{about}</p>
+    </div>
+  );
+
+  const aboutRender = (
+    <>
+      <Image imageUrl={imageUrl} />
+      {aboutMe}
+      <Contact data={contact} />
+      <Social data={social} />
+    </>
+  );
+
   return (
     <div className={classNames('panel', classes.root)}>
-      <div className={classes.right}>
+      <div className={classNames('is-hidden-mobile', classes.right)}>
         <LeftCorner />
-        <Image imageUrl={imageUrl} />
-        <div className={classes.about}>
-          <p className='has-text-info is-size-4 has-text-weight-medium'>
-            SOBRE MI
-          </p>
-          <p className='has-text-left is-size-7'>{about}</p>
-        </div>
-        <Contact data={contact} />
-        <Social data={social} />
+        {aboutRender}
       </div>
       <div style={{ width: '100%', backgroundColor: '#ededed' }}>
-        <div className={classes.top} />
+        <div className={classNames(classes.top, 'is-hidden-mobile')} />
         <div className={classes.content}>
-          <Title>{title}</Title>
+          <Title imageUrl={imageUrl}>{title}</Title>
           <Subtitle>{subtitle}</Subtitle>
           <Education data={education} />
           <Experience data={experience} />
+          <MobileFooter contact={contact} social={social} />
         </div>
       </div>
     </div>
@@ -116,7 +131,7 @@ Layout.propTypes = {
     PropTypes.shape({
       key: PropTypes.string,
       value: PropTypes.string,
-    }),
+    })
   ),
   social: PropTypes.array,
   title: PropTypes.string,
