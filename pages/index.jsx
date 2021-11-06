@@ -68,7 +68,7 @@ export default function Home() {
                 yearsBetween: [2021, 'Actualidad'],
                 description: `Ingeniero frontend en rappi turbo`,
                 logo: '/companies/rappi.png',
-                link: 'https://www.rappi.cl/'
+                link: 'https://www.rappi.com/',
               },
               {
                 workplace: 'Drivetech',
