@@ -18,12 +18,16 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: ['react'],
-  ignorePatterns: ["next.config.js"],
+  ignorePatterns: ['next.config.js'],
   rules: {
     'react/display-name': 0,
     'react/jsx-uses-react': 'error',
     'react/jsx-uses-vars': 'error',
     'react-hooks/exhaustive-deps': 0,
+    'no-loss-of-precision': 0,
+    'no-nonoctal-decimal-escape': 0,
+    'no-unsafe-optional-chaining': 0,
+    'no-useless-backreference': 0,
   },
   settings: {
     react: {
