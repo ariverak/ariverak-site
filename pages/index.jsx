@@ -1,8 +1,8 @@
-import React from 'react';
-import Head from 'next/head';
-import Layout from '@components/Layout';
-import Background from '@components/Background';
-import WhatsAppWidget from 'react-whatsapp-widget';
+import React from 'react'
+import Head from 'next/head'
+import Layout from '@components/Layout'
+import Background from '@components/Background'
+import WhatsAppWidget from 'react-whatsapp-widget'
 
 export default function Home() {
   return (
@@ -26,7 +26,7 @@ export default function Home() {
       <main>
         <Background>
           <Layout
-            imageUrl='/me.jpg'
+            imageUrl='/me.png'
             about={`
               Soy una persona pro activa, me gustan las nuevas tecnologías y los desafíos.
               En mi corta carrera e desarrollado variadas soluciones de software desde aplicaciones móviles, web y desarrollo backend.
@@ -34,24 +34,24 @@ export default function Home() {
             `}
             contact={[
               { key: 'Correo Personal', value: 'jrivera.v@outlook.com' },
-              { key: 'Correo Electrónico', value: 'andres.rivera@rappi.com' },
+              { key: 'Correo Electrónico', value: 'andres.rivera@rappi.com' }
             ]}
             social={[
               {
                 icon: 'github-square',
                 name: 'Github',
-                link: 'https://github.com/ariverak',
+                link: 'https://github.com/ariverak'
               },
               {
                 icon: 'instagram-square',
                 name: 'Instagram',
-                link: 'https://www.instagram.com/ariverak',
+                link: 'https://www.instagram.com/ariverak'
               },
               {
                 icon: 'linkedin',
                 name: 'Linkedin',
-                link: 'https://www.linkedin.com/in/ariverak/',
-              },
+                link: 'https://www.linkedin.com/in/ariverak/'
+              }
             ]}
             title='juan andrés rivera'
             subtitle='Ingeniero de software'
@@ -59,8 +59,8 @@ export default function Home() {
               {
                 university: 'Instituto Profesional AIEP',
                 yearsBetween: [2014, 2017],
-                career: 'Ingeniería de Ejecución en Informática.',
-              },
+                career: 'Ingeniería de Ejecución en Informática.'
+              }
             ]}
             experience={[
               {
@@ -68,14 +68,14 @@ export default function Home() {
                 yearsBetween: [2021, 'Actualidad'],
                 description: `Ingeniero frontend en rappi turbo`,
                 logo: '/companies/rappi.png',
-                link: 'https://www.rappi.com/',
+                link: 'https://www.rappi.com/'
               },
               {
                 workplace: 'Drivetech',
                 yearsBetween: [2020, 2021],
                 description: `Desarrollo de aplicaciones en tiempo real con React.`,
                 logo: '/companies/drivetech.png',
-                link: 'https://www.drivetech.pro/',
+                link: 'https://www.drivetech.pro/'
               },
               {
                 workplace: 'Soho',
@@ -83,14 +83,14 @@ export default function Home() {
                 description:
                   'Desarrollador fullstack remoto para importante consultora experta en experiencia de usuario (UX)',
                 logo: '/companies/soho.png',
-                link: 'https://soho.cl/',
+                link: 'https://soho.cl/'
               },
               {
                 workplace: 'GroupBI',
                 yearsBetween: [2018, 2019],
                 description:
                   'Encargado de llevar acabo el análisis y desarrollo de aplicaciones web, creación de bases de datos, API Restfull con NodeJS, maquetación, diseño y programación con ReactJS.',
-                logo: '/companies/groupbi.png',
+                logo: '/companies/groupbi.png'
               },
               {
                 workplace: 'Cooprinsem',
@@ -98,8 +98,8 @@ export default function Home() {
                 description:
                   'Desarrollo de Software para el área agrícola de Osorno',
                 logo: '/companies/cooprinsem.png',
-                link: 'https://www.cooprinsem.cl/',
-              },
+                link: 'https://www.cooprinsem.cl/'
+              }
             ]}
           />
         </Background>
@@ -112,5 +112,5 @@ export default function Home() {
         />
       </main>
     </>
-  );
+  )
 }
