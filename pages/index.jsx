@@ -2,7 +2,7 @@ import React from 'react'
 import Head from 'next/head'
 import Layout from '@components/Layout'
 import Background from '@components/Background'
-import WhatsAppWidget from 'react-whatsapp-widget'
+// import WhatsAppWidget from 'react-whatsapp-widget'
 
 export default function Home() {
   return (
@@ -28,13 +28,12 @@ export default function Home() {
           <Layout
             imageUrl='/me.png'
             about={`
-              Soy una persona pro activa, me gustan las nuevas tecnologías y los desafíos.
-              En mi corta carrera e desarrollado variadas soluciones de software desde aplicaciones móviles, web y desarrollo backend.
-              No obstante siempre intento estar a la vanguardia aprendiendo cosas nuevas.        
+            Desarrollador de JavaScript apasionado y altamente experimentado, con más de 7 años de experiencia en el diseño y desarrollo de soluciones web innovadoras. Me especializo en la creación de aplicaciones web y móviles de alto rendimiento utilizando ReactJS y tengo un sólido conocimiento del backend a través de NodeJS.        
             `}
             contact={[
               { key: 'Correo Personal', value: 'jrivera.v@outlook.com' },
-              { key: 'Correo Electrónico', value: 'andres.rivera@rappi.com' }
+              { key: 'Correo Electrónico', value: 'jrivera@abaqus.cl' },
+              { key: 'Correo Electrónico', value: 'arivera@smertgroup.com' }
             ]}
             social={[
               {
@@ -64,24 +63,38 @@ export default function Home() {
             ]}
             experience={[
               {
+                workplace: 'Abaqus',
+                yearsBetween: [2024, 'Actualidad'],
+                description: `Ingeniero Fullstack en el equipo de desarrollo de soluciones.`,
+                logo: '/companies/abaqus.png',
+                link: 'https://abaqus.cl/solutions/'
+              },
+              {
                 workplace: 'Rappi',
-                yearsBetween: [2021, 'Actualidad'],
-                description: `Ingeniero frontend en rappi turbo`,
+                yearsBetween: [2021, 2024],
+                description: `Ingeniero frontend en el equipo de inventario de rappi turbo.`,
                 logo: '/companies/rappi.png',
                 link: 'https://www.rappi.com/'
               },
               {
+                workplace: 'SmertGroup',
+                yearsBetween: [2021, 'Actualidad'],
+                description:
+                  'Desarrollador del eco sistema de aplicaciones de la empresa.',
+                logo: '/companies/smertgroup.png',
+                link: 'https://smertgroup.com/'
+              },
+              {
                 workplace: 'Drivetech',
                 yearsBetween: [2020, 2021],
-                description: `Desarrollo de aplicaciones en tiempo real con React.`,
+                description: `Desarrollador de aplicaciones en tiempo real con React.`,
                 logo: '/companies/drivetech.png',
                 link: 'https://www.drivetech.pro/'
               },
               {
                 workplace: 'Soho',
                 yearsBetween: [2019, 2020],
-                description:
-                  'Desarrollador fullstack remoto para importante consultora experta en experiencia de usuario (UX)',
+                description: 'Desarrollador fullstack para consultora UX.',
                 logo: '/companies/soho.png',
                 link: 'https://soho.cl/'
               },
@@ -89,27 +102,27 @@ export default function Home() {
                 workplace: 'GroupBI',
                 yearsBetween: [2018, 2019],
                 description:
-                  'Encargado de llevar acabo el análisis y desarrollo de aplicaciones web, creación de bases de datos, API Restfull con NodeJS, maquetación, diseño y programación con ReactJS.',
+                  'Encargado de llevar acabo el análisis y desarrollo de aplicaciones web.',
                 logo: '/companies/groupbi.png'
               },
               {
                 workplace: 'Cooprinsem',
                 yearsBetween: [2016, 2017],
                 description:
-                  'Desarrollo de Software para el área agrícola de Osorno',
+                  'Desarrollador de Software para el área agrícola de Osorno.',
                 logo: '/companies/cooprinsem.png',
                 link: 'https://www.cooprinsem.cl/'
               }
             ]}
           />
         </Background>
-        <WhatsAppWidget
+        {/* <WhatsAppWidget
           sendButton='Enviar'
           companyName='ariverak'
           message='Hola, si quires contactarme, enviame un mensaje.'
           textReplyTime='En Linea'
-          phoneNumber='+56965142583'
-        />
+          phoneNumber='xxxxxxxxxx'
+        /> */}
       </main>
     </>
   )
