@@ -20,8 +20,10 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-jss": "10.1.1",
-    "react-particles-js": "^3.1.0",
-    "react-whatsapp-widget": "^1.2.1"
+    "react-tsparticles": "^1.43.1",
+    "tsparticles": "^1.37.3",
+    "react-whatsapp-widget": "^1.2.1",
+    "sass": "^1.32.8"
   },
   "devDependencies": {
     "babel-eslint": "^9.0.0",

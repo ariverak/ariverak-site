@@ -1,5 +1,5 @@
 import React from 'react';
-import Particles from 'react-particles-js';
+import Particles from "react-tsparticles";
 import classNames from 'classnames';
 import { createUseStyles } from 'react-jss';
 import particlesConfig from '@config/particles.json';
@@ -28,7 +28,7 @@ function Background({ children }) {
   const classes = useStyles();
   return (
     <div className={classNames('is-relative', classes.root)}>
-      <Particles className={classes.particles} params={particlesConfig} />
+      <Particles className={classes.particles} options={particlesConfig} />
       {children}
     </div>
   );
