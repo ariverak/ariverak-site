@@ -1,4 +1,5 @@
-import type { Metadata } from 'next'
+import React from 'react'
+import type { Metadata, Viewport } from 'next'
 // app/layout.tsx
 import { Providers } from './providers'
 import '@/styles/globals.css'
@@ -20,23 +21,22 @@ import '@/styles/globals.css'
 
 export const metadata: Metadata = {
   title: 'Ariverak - Curriculum',
-  viewport: 'width=device-width, initial-scale=1',
-  openGraph: {
-    type: 'website',
-    images: ['/juan-rivera-vargas.jpg'],
-    title: 'Juan Rivera Vargas'
-  },
-  description: 'Este curriculum esta hecho 100% a mano :)'
+  description: 'Este curriculum esta hecho 100% a mano :)',
+}
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
 }
 
 export default function RootLayout({
-  children
+  children,
 }: {
   children: React.ReactNode
 }) {
   const theme = 'light'
   return (
-    <html lang='es' className={theme}>
+    <html lang="es" className={theme}>
       <body>
         <Providers>{children}</Providers>
       </body>
