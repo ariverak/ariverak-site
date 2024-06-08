@@ -1,9 +1,13 @@
-import { Button } from '@nextui-org/button'
+'use client'
+import Background from '@/components/Background'
+import WorkPortfolio from '@/components/WorkPortfolio'
 
 export default function Home() {
   return (
     <main>
-      <Button color="primary">Click me</Button>
+      <Background>
+        <WorkPortfolio />
+      </Background>
     </main>
   )
 }

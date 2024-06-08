@@ -42,6 +42,8 @@ module.exports = {
     'prefer-const': 'warn',
     // Don't use `{}` as a type.
     '@typescript-eslint/ban-types': 'warn',
+    // others
+    'import/no-named-as-default': 'off',
   },
   ignorePatterns: [
     '.eslintrc.js',
