@@ -1,5 +1,6 @@
 // app/providers.tsx
 'use client'
+import React from 'react'
 
 import { NextUIProvider } from '@nextui-org/react'
 

@@ -47,8 +47,7 @@ module.exports = {
     '.eslintrc.js',
     'next.config.mjs',
     'postcss.config.js',
-    'tailwind.config.ts',
-    'components/ui',
+    'tailwind.config.ts'
   ],
   settings: {
     'import/parsers': {
