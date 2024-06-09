@@ -8,41 +8,39 @@ const Layout: React.FC<React.PropsWithChildren> & {
   Content: React.FC<ContentProps>
 } = ({ children }) => {
   return (
-    <>
-      <Modal
-        size="5xl"
-        isOpen
-        backdrop="transparent"
-        hideCloseButton
-        placement="top"
-        style={{ marginTop: 15 }}
-        motionProps={{
-          variants: {
-            enter: {
-              y: 0,
-              opacity: 1,
-              transition: {
-                duration: 1,
-                ease: 'easeOut',
-              },
-            },
-            exit: {
-              y: -20,
-              opacity: 0,
-              transition: {
-                duration: 1,
-                ease: 'easeIn',
-              },
+    <Modal
+      size="5xl"
+      isOpen
+      backdrop="transparent"
+      hideCloseButton
+      placement="top"
+      className="m-0 !rounded-none sm:!mt-4 md:!rounded-lg"
+      motionProps={{
+        variants: {
+          enter: {
+            y: 0,
+            opacity: 1,
+            transition: {
+              duration: 1,
+              ease: 'easeOut',
             },
           },
-        }}
-      >
-        <ModalContent className="border-large border-slate-400">
-          <ModalBody className="flex-row">{children}</ModalBody>
-          <ModalFooter />
-        </ModalContent>
-      </Modal>
-    </>
+          exit: {
+            y: -20,
+            opacity: 0,
+            transition: {
+              duration: 1,
+              ease: 'easeIn',
+            },
+          },
+        },
+      }}
+    >
+      <ModalContent className="border-large border-slate-400">
+        <ModalBody className="flex-row">{children}</ModalBody>
+        <ModalFooter />
+      </ModalContent>
+    </Modal>
   )
 }
 

@@ -5,6 +5,7 @@ import { GraduationCap, Laptop } from 'lucide-react'
 export interface ContentProps {
   title: string
   subtitle: string
+  avatarUrl: string
   education: {
     university: string
     yearsBetween: number[]
@@ -22,16 +23,29 @@ export interface ContentProps {
 const Content: React.FC<ContentProps> = ({
   title,
   subtitle,
+  avatarUrl,
   education,
   experience,
 }) => {
   return (
     <div className="flex-1 bg-white px-8 pt-24">
-      <h1 className="text-5xl font-bold">{title}</h1>
-      <h2 className="text-2xl font-semibold">{subtitle}</h2>
+      <div className="flex items-center justify-between">
+        <div>
+          <h1 className="text-5xl font-bold">{title}</h1>
+          <h2 className="text-2xl font-semibold">{subtitle}</h2>
+        </div>
+        <Avatar
+          src={avatarUrl}
+          size="lg"
+          className="h-auto w-[75px] min-w-[75px] max-w-[75px] md:hidden"
+          classNames={{
+            base: 'bg-white',
+          }}
+        />
+      </div>
       <Divider className="my-4" />
       {/* education */}
-      <h3 className="mb-2 flex items-center text-lg font-semibold">
+      <h3 className="mb-4 flex items-center text-lg font-semibold">
         <GraduationCap size={24} className="mr-2" />
         Educación
       </h3>
@@ -46,7 +60,7 @@ const Content: React.FC<ContentProps> = ({
       ))}
       <Divider className="my-4" />
       {/* profesional experience */}
-      <h3 className="mb-2 flex items-center text-lg font-semibold">
+      <h3 className="mb-4 flex items-center text-lg font-semibold">
         <Laptop size={24} className="mr-2" />
         Experiencia Profesional
       </h3>
@@ -55,6 +69,8 @@ const Content: React.FC<ContentProps> = ({
           <Avatar
             src={exp.logo}
             isBordered
+            size="sm"
+            className="h-auto w-[40px] min-w-[32px] max-w-[32px]"
             classNames={{
               base: 'bg-white',
             }}
@@ -70,7 +86,6 @@ const Content: React.FC<ContentProps> = ({
           </div>
         </div>
       ))}
-      <Divider className="my-4" />
     </div>
   )
 }
