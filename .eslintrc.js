@@ -1,55 +1,62 @@
+/* eslint-env node */
 module.exports = {
+  root: true,
   env: {
     browser: true,
     node: true,
-    es6: true,
+    es2021: true,
   },
-  extends: ['eslint:recommended', 'plugin:react/recommended'],
-  globals: {
-    Atomics: 'readonly',
-    SharedArrayBuffer: 'readonly',
-  },
-  parser: 'babel-eslint',
+  parser: '@typescript-eslint/parser',
   parserOptions: {
+    project: './tsconfig.json',
+    tsconfigRootDir: __dirname,
     ecmaFeatures: {
       jsx: true,
     },
-    ecmaVersion: 2018,
+    ecmaVersion: 12,
     sourceType: 'module',
   },
-  plugins: ['react'],
-  ignorePatterns: ['next.config.js'],
+  extends: [
+    'eslint:recommended',
+    'plugin:import/recommended',
+    'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:import/typescript',
+    'next',
+    'plugin:prettier/recommended',
+  ],
+  plugins: ['import', 'react', 'react-hooks', '@typescript-eslint'],
   rules: {
-    'react/display-name': 0,
-    'react/jsx-uses-react': 'error',
-    'react/jsx-uses-vars': 'error',
-    'react-hooks/exhaustive-deps': 0,
-    'no-loss-of-precision': 0,
-    'no-nonoctal-decimal-escape': 0,
-    'no-unsafe-optional-chaining': 0,
-    'no-useless-backreference': 0,
+    'no-undef': 'error',
+    // Unable to resolve path to module ...
+    'import/no-unresolved': 'warn',
+    // ... is defined but never used.
+    'no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-vars': 'warn',
+    // Unexpected any. Specify a different type.
+    '@typescript-eslint/no-explicit-any': 'off',
+    // Using `<img>` could result in slower LCP and higher bandwidth.
+    '@next/next/no-img-element': 'off',
+    // ... is never reassigned. Use 'const' instead.
+    'prefer-const': 'warn',
+    // Don't use `{}` as a type.
+    '@typescript-eslint/ban-types': 'warn',
+    // others
+    'import/no-named-as-default': 'off',
   },
+  ignorePatterns: [
+    '.eslintrc.js',
+    'next.config.mjs',
+    'postcss.config.js',
+    'tailwind.config.ts'
+  ],
   settings: {
-    react: {
-      createClass: 'createReactClass', // Regex for Component Factory to use,
-      // default to "createReactClass"
-      pragma: 'React', // Pragma to use, default to "React"
-      version: 'detect', // React version. "detect" automatically picks the version you have installed.
-      // You can also use `16.0`, `16.3`, etc, if you want to override the detected value.
-      // default to latest and warns if missing
-      // It will default to "detect" in the future
-      flowVersion: '0.53', // Flow version
+    'import/parsers': {
+      '@typescript-eslint/parser': ['.ts', '.tsx'],
     },
-    propWrapperFunctions: [
-      // The names of any function used to wrap propTypes, e.g. `forbidExtraProps`. If this isn't set, any propTypes wrapped in a function will be skipped.
-      'forbidExtraProps',
-      { property: 'freeze', object: 'Object' },
-      { property: 'myFavoriteWrapper' },
-    ],
-    linkComponents: [
-      // Components used as alternatives to <a> for linking, eg. <Link to={ url } />
-      'Hyperlink',
-      { name: 'Link', linkAttribute: 'to' },
-    ],
+    'import/resolver': {
+      typescript: {},
+    },
   },
-};
+}
