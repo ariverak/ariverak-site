@@ -1,8 +1,14 @@
 import React from 'react'
-import { Avatar, Spacer, Listbox, ListboxItem } from '@nextui-org/react'
+import {
+  Avatar,
+  Spacer,
+  Listbox,
+  ListboxItem,
+  Tooltip,
+} from '@nextui-org/react'
 import Wave from 'react-wavify'
 import { Star, AtSign, icons } from 'lucide-react'
-
+import useClipboard from 'react-use-clipboard'
 import { slate } from 'tailwindcss/colors'
 
 export interface SidebarProps {
@@ -26,8 +32,11 @@ const Sidebar: React.FC<SidebarProps> = ({
   contact,
   social,
 }) => {
+  const [isCopied, setCopied] = useClipboard('Text to copy', {
+    successDuration: 1000,
+  })
   return (
-    <div className="relative hidden min-h-screen w-[300px] flex-col bg-slate-400 text-white md:block">
+    <div className="relative hidden min-h-screen w-[300px] flex-col bg-slate-500 text-white md:block">
       <div className="flex h-48 w-full items-center justify-center bg-white">
         <Avatar
           className="mt-32 h-40 w-40"
@@ -38,7 +47,7 @@ const Sidebar: React.FC<SidebarProps> = ({
         />
       </div>
       <Wave
-        fill={slate[400]}
+        fill={slate[500]}
         paused={false}
         className="mt-[-48px] h-24 w-full"
         options={{
@@ -55,17 +64,23 @@ const Sidebar: React.FC<SidebarProps> = ({
           <Star size={24} className="mr-2" />
           Contacto
         </h2>
-        <Listbox className="p-0">
-          {contact.map((item, index) => (
-            <ListboxItem
-              key={index}
-              value={item.key}
-              startContent={<AtSign size={16} />}
-            >
-              {item.value}
-            </ListboxItem>
-          ))}
-        </Listbox>
+        <Tooltip placement="top" isOpen={isCopied} content="Copiado!">
+          <Listbox className="p-0">
+            {contact.map((item, index) => (
+              <ListboxItem
+                key={index}
+                value={item.value}
+                startContent={<AtSign size={16} />}
+                onClick={() => {
+                  navigator.clipboard.writeText(item.value)
+                  setCopied()
+                }}
+              >
+                {item.value}
+              </ListboxItem>
+            ))}
+          </Listbox>
+        </Tooltip>
         <Spacer y={8} />
         <h2 className="mb-4 flex items-center text-lg font-bold">
           <Star size={24} className="mr-2" />
@@ -79,6 +94,8 @@ const Sidebar: React.FC<SidebarProps> = ({
                 key={index}
                 value={item.name}
                 startContent={<Icon size={16} />}
+                href={item.link}
+                target="_blank"
               >
                 {item.name}
               </ListboxItem>
