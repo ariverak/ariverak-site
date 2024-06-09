@@ -1,11 +1,12 @@
 import React from 'react'
 import { Avatar, Divider } from '@nextui-org/react'
-import { GraduationCap, Laptop } from 'lucide-react'
+import { GraduationCap, Laptop, Mail } from 'lucide-react'
 
 export interface ContentProps {
   title: string
   subtitle: string
   avatarUrl: string
+  email: string
   education: {
     university: string
     yearsBetween: number[]
@@ -24,6 +25,7 @@ const Content: React.FC<ContentProps> = ({
   title,
   subtitle,
   avatarUrl,
+  email,
   education,
   experience,
 }) => {
@@ -31,8 +33,12 @@ const Content: React.FC<ContentProps> = ({
     <div className="flex-1 bg-white px-2 pt-12 sm:px-8 md:pt-24">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-5xl font-bold">{title}</h1>
-          <h2 className="text-2xl font-semibold">{subtitle}</h2>
+          <h1 className="mb-2 text-5xl font-bold">{title}</h1>
+          <h2 className="mb-2 text-2xl font-semibold">{subtitle}</h2>
+          <h2 className="text-md flex items-center font-semibold text-gray-500 md:hidden">
+            <Mail size={18} className="mr-2" />
+            {email}
+          </h2>
         </div>
         <Avatar
           src={avatarUrl}

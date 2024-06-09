@@ -5,3 +5,20 @@
 html, body {
   background: #232741 !important;
 }
+
+@media print {
+  @page {
+      margin-top: 0;
+      margin-bottom: 0;
+  }
+  body {
+      padding-top: 72px;
+      padding-bottom: 72px ;
+  }
+  #print {
+    display: none;
+  }
+  #tsparticles {
+    visibility: hidden;
+  }
+}
