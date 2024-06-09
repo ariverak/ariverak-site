@@ -28,7 +28,7 @@ const Content: React.FC<ContentProps> = ({
   experience,
 }) => {
   return (
-    <div className="flex-1 bg-white px-8 pt-24">
+    <div className="flex-1 bg-white px-2 pt-12 sm:px-8 md:pt-24">
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-5xl font-bold">{title}</h1>
