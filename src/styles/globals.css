@@ -13,7 +13,10 @@ html, body {
   }
   body {
       padding-top: 72px;
-      padding-bottom: 72px ;
+      padding-bottom: 72px;
+  }
+  .wrapper {
+    overflow: hidden;
   }
   #print {
     display: none;
