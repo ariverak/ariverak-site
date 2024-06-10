@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   Avatar,
   Spacer,
@@ -10,7 +10,7 @@ import {
 import Wave from 'react-wavify'
 import { Star, AtSign, icons } from 'lucide-react'
 import { slate } from 'tailwindcss/colors'
-import useClipboard from 'react-use-clipboard'
+import debounce from 'lodash.debounce'
 
 export interface SidebarProps {
   avatarUrl: string
@@ -33,9 +33,12 @@ const Sidebar: React.FC<SidebarProps> = ({
   contact,
   social,
 }) => {
-  const [isCopied, setCopied] = useClipboard('Text to copy', {
-    successDuration: 1000,
-  })
+  const [itemCopied, setItemCopied] = useState<number | undefined>()
+
+  const setCopied = debounce(() => {
+    setItemCopied(undefined)
+  }, 2000)
+
   return (
     <div className="relative hidden min-h-screen w-[300px] flex-col bg-slate-500 text-white md:block">
       <div className="flex h-48 w-full items-center justify-center bg-white">
@@ -66,23 +69,28 @@ const Sidebar: React.FC<SidebarProps> = ({
           <Star size={24} className="mr-2" />
           Contacto
         </h2>
-        <Tooltip placement="top-end" isOpen={isCopied} content="Copiado!">
-          <Listbox className="p-0">
-            {contact.map((item, index) => (
-              <ListboxItem
-                key={index}
-                value={item.value}
-                startContent={<AtSign size={16} />}
-                onClick={() => {
-                  navigator.clipboard.writeText(item.value)
-                  setCopied()
-                }}
+        <Listbox className="p-0">
+          {contact.map((item, index) => (
+            <ListboxItem
+              key={index}
+              value={item.value}
+              startContent={<AtSign size={16} />}
+              onClick={() => {
+                navigator.clipboard.writeText(item.value)
+                setItemCopied(index)
+                setCopied()
+              }}
+            >
+              <Tooltip
+                placement="top-end"
+                isOpen={itemCopied === index}
+                content="Copiado!"
               >
                 {item.value}
-              </ListboxItem>
-            ))}
-          </Listbox>
-        </Tooltip>
+              </Tooltip>
+            </ListboxItem>
+          ))}
+        </Listbox>
         <Spacer y={8} />
         <h2 className="mb-4 flex items-center text-lg font-bold">
           <Star size={24} className="mr-2" />
