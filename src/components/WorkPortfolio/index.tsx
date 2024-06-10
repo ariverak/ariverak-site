@@ -51,20 +51,21 @@ const WorkPortfolio: React.FC = () => {
             link: 'https://abaqus.cl/solutions/',
           },
           {
+            workplace: 'SmertGroup',
+            yearsBetween: [2021, new Date().getFullYear()],
+            description:
+              'Desarrollador del eco sistema de aplicaciones de la empresa.',
+            logo: '/companies/smertgroup.png',
+            link: 'https://smertgroup.com/',
+          },
+          {
             workplace: 'Rappi',
             yearsBetween: [2021, 2024],
             description: `Ingeniero frontend en el equipo de inventario de rappi turbo.`,
             logo: '/companies/rappi.png',
             link: 'https://www.rappi.com/',
           },
-          {
-            workplace: 'SmertGroup',
-            yearsBetween: [2021, 'Actualidad'],
-            description:
-              'Desarrollador del eco sistema de aplicaciones de la empresa.',
-            logo: '/companies/smertgroup.png',
-            link: 'https://smertgroup.com/',
-          },
+
           {
             workplace: 'Drivetech',
             yearsBetween: [2020, 2021],
