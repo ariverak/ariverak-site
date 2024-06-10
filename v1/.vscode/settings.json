@@ -1,8 +1,0 @@
-{
-  "eslint.format.enable": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "[javascriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "prettier.singleQuote": true
-}
