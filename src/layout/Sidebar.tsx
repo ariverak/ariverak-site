@@ -5,6 +5,7 @@ import {
   Listbox,
   ListboxItem,
   Tooltip,
+  Image,
 } from '@nextui-org/react'
 import Wave from 'react-wavify'
 import { Star, AtSign, icons } from 'lucide-react'
@@ -43,6 +44,7 @@ const Sidebar: React.FC<SidebarProps> = ({
           classNames={{
             base: 'bg-white',
           }}
+          ImgComponent={Image}
           src={avatarUrl}
         />
       </div>
@@ -64,7 +66,7 @@ const Sidebar: React.FC<SidebarProps> = ({
           <Star size={24} className="mr-2" />
           Contacto
         </h2>
-        <Tooltip placement="top" isOpen={isCopied} content="Copiado!">
+        <Tooltip placement="top-end" isOpen={isCopied} content="Copiado!">
           <Listbox className="p-0">
             {contact.map((item, index) => (
               <ListboxItem
@@ -73,7 +75,7 @@ const Sidebar: React.FC<SidebarProps> = ({
                 startContent={<AtSign size={16} />}
                 onClick={() => {
                   navigator.clipboard.writeText(item.value)
-                  // setCopied()
+                  setCopied()
                 }}
               >
                 {item.value}
