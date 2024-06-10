@@ -1,5 +1,5 @@
 import React from 'react'
-import { Avatar, Divider } from '@nextui-org/react'
+import { Avatar, Divider, Image } from '@nextui-org/react'
 import { GraduationCap, Laptop, Mail } from 'lucide-react'
 
 export interface ContentProps {
@@ -80,6 +80,7 @@ const Content: React.FC<ContentProps> = ({
             classNames={{
               base: 'bg-white',
             }}
+            ImgComponent={Image}
           />
           <div className="ml-4">
             <a href={exp.link} target="_blank" rel="noreferrer">

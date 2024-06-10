@@ -57,7 +57,7 @@ const Layout: React.FC<React.PropsWithChildren<LayoutProps>> & {
                 isIconOnly
                 color="warning"
                 variant="faded"
-                className="z-100 fixed bottom-5 right-5 hidden cursor-pointer md:flex"
+                className="z-100 fixed bottom-5 right-10 hidden cursor-pointer md:flex"
                 onClick={() => window.print()}
               >
                 <PrinterIcon />
