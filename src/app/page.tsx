@@ -1,5 +1,6 @@
 'use client'
 import Background from '@/components/Background'
+import PrintButton from '@/components/PrintButton'
 import WorkPortfolio from '@/components/WorkPortfolio'
 
 export default function Home() {
@@ -8,6 +9,7 @@ export default function Home() {
       <Background>
         <WorkPortfolio />
       </Background>
+      <PrintButton />
     </main>
   )
 }

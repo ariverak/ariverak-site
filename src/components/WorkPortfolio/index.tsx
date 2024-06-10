@@ -3,7 +3,7 @@ import Layout from '@/layout'
 
 const WorkPortfolio: React.FC = () => {
   return (
-    <Layout enablePrint>
+    <Layout>
       <Layout.Sidebar
         avatarUrl="/me.png"
         about="Desarrollador de JavaScript apasionado y altamente experimentado, con más de 7 años de experiencia en el diseño y desarrollo de soluciones web innovadoras. Me especializo en la creación de aplicaciones web y móviles de alto rendimiento utilizando ReactJS y tengo un sólido conocimiento del backend a través de NodeJS."
