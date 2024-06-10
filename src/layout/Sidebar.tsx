@@ -8,8 +8,8 @@ import {
 } from '@nextui-org/react'
 import Wave from 'react-wavify'
 import { Star, AtSign, icons } from 'lucide-react'
-import useClipboard from 'react-use-clipboard'
 import { slate } from 'tailwindcss/colors'
+import useClipboard from 'react-use-clipboard'
 
 export interface SidebarProps {
   avatarUrl: string
@@ -73,7 +73,7 @@ const Sidebar: React.FC<SidebarProps> = ({
                 startContent={<AtSign size={16} />}
                 onClick={() => {
                   navigator.clipboard.writeText(item.value)
-                  setCopied()
+                  // setCopied()
                 }}
               >
                 {item.value}
