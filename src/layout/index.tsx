@@ -2,6 +2,7 @@ import React from 'react'
 import { Modal, ModalContent, ModalBody, ModalFooter } from '@nextui-org/react'
 import Sidebar, { SidebarProps } from './Sidebar'
 import Content, { ContentProps } from './Content'
+import ScrollShadow from '@/components/ScrollShadow'
 
 interface LayoutProps {}
 
@@ -43,7 +44,9 @@ const Layout: React.FC<React.PropsWithChildren<LayoutProps>> & {
       }}
     >
       <ModalContent className="border-large border-slate-400">
-        <ModalBody className="flex-row">{children}</ModalBody>
+        <ModalBody>
+          <ScrollShadow scrollContainer=".wrapper">{children}</ScrollShadow>
+        </ModalBody>
         <ModalFooter />
       </ModalContent>
     </Modal>
