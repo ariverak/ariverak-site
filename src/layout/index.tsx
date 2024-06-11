@@ -20,6 +20,7 @@ const Layout: React.FC<React.PropsWithChildren<LayoutProps>> & {
       scrollBehavior="outside"
       classNames={{
         wrapper: 'wrapper',
+        base: 'bg-white dark:bg-slate-700',
       }}
       className="m-0 !rounded-none sm:!mt-4 md:!rounded-lg"
       motionProps={{
