@@ -1,16 +1,19 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useTheme } from 'next-themes'
 import { Button, Tooltip } from '@nextui-org/react'
 import { Sun, Moon } from 'lucide-react'
 import { motion } from 'framer-motion'
 
 const ThemeSwitcher = () => {
-  const { resolvedTheme, setTheme } = useTheme()
+  const [mounted, setMounted] = useState(false)
+  const { theme, setTheme } = useTheme()
+  useEffect(() => setMounted(true), [])
+  if (!mounted) return null
   return (
     <Tooltip
       id="theme-switcher"
       className="hidden md:block"
-      content={resolvedTheme === 'dark' ? 'Light' : 'Dark'}
+      content={theme === 'dark' ? 'Light' : 'Dark'}
       placement="left"
       closeDelay={0}
     >
@@ -25,10 +28,10 @@ const ThemeSwitcher = () => {
           color="warning"
           variant="faded"
           onClick={() => {
-            setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
+            setTheme(theme === 'dark' ? 'light' : 'dark')
           }}
         >
-          {resolvedTheme === 'dark' ? <Sun /> : <Moon />}
+          {theme === 'dark' ? <Sun /> : <Moon />}
         </Button>
       </motion.div>
     </Tooltip>
