@@ -8,6 +8,8 @@ html, body {
 
 @media print {
   @page {
+      /* A4 */
+      size: 210mm 297mm;
       margin-top: 0;
       margin-bottom: 0;
   }
