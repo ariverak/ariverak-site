@@ -43,7 +43,7 @@ const Layout: React.FC<React.PropsWithChildren<LayoutProps>> & {
         },
       }}
     >
-      <ModalContent className="border-large border-slate-400">
+      <ModalContent className="border-large border-slate-400 dark:border-slate-600">
         <ModalBody>
           <ScrollShadow scrollContainer=".wrapper">{children}</ScrollShadow>
         </ModalBody>

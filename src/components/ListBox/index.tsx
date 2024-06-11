@@ -58,6 +58,7 @@ export const ListBox: React.FC<Partial<ListboxProps> & Props> = ({
             }
             item.onClick && item.onClick(e)
           }}
+          className="text-slate-100 dark:text-slate-300"
         >
           <ValueWrapper index={index}>{item.value}</ValueWrapper>
         </ListboxItem>

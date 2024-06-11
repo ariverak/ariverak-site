@@ -4,6 +4,7 @@ import Wave from 'react-wavify'
 import { Star, AtSign, icons } from 'lucide-react'
 import { slate } from 'tailwindcss/colors'
 import ListBox from '@/components/ListBox'
+import { useTheme } from 'next-themes'
 
 export interface SidebarProps {
   avatarUrl: string
@@ -26,9 +27,10 @@ const Sidebar: React.FC<SidebarProps> = ({
   contact,
   social,
 }) => {
+  const { resolvedTheme } = useTheme()
   return (
-    <div className="relative hidden min-h-screen w-[300px] flex-col bg-slate-500 text-white md:block">
-      <div className="flex h-48 w-full items-center justify-center bg-white">
+    <div className="relative hidden min-h-screen w-[300px] flex-col bg-slate-500 text-white  dark:bg-slate-900 md:block">
+      <div className="flex h-48 w-full items-center justify-center bg-white dark:bg-slate-700">
         <Avatar
           className="mt-32 h-40 w-40"
           classNames={{
@@ -39,9 +41,9 @@ const Sidebar: React.FC<SidebarProps> = ({
         />
       </div>
       <Wave
-        fill={slate[500]}
+        fill={resolvedTheme === 'dark' ? slate[900] : slate[500]}
         paused={false}
-        className="mt-[-48px] h-24 w-full"
+        className="mt-[-48px] h-24 w-full fill-slate-500"
         options={{
           height: 20,
           amplitude: 20,
@@ -50,9 +52,11 @@ const Sidebar: React.FC<SidebarProps> = ({
         }}
       />
       <div className="p-4">
-        <p className="text-slate-10 text-left text-sm">{about}</p>
+        <p className="text-left text-sm text-slate-100 dark:text-slate-300">
+          {about}
+        </p>
         <Spacer y={8} />
-        <h2 className="mb-4 flex items-center text-lg font-bold">
+        <h2 className="mb-4 flex items-center text-lg font-bold text-slate-100 dark:text-slate-300">
           <Star size={24} className="mr-2" />
           Contacto
         </h2>
@@ -63,10 +67,11 @@ const Sidebar: React.FC<SidebarProps> = ({
             startContent: <AtSign size={16} />,
           }))}
           copiable
+          color="primary"
         />
 
         <Spacer y={8} />
-        <h2 className="mb-4 flex items-center text-lg font-bold">
+        <h2 className="mb-4 flex items-center text-lg font-bold text-slate-100 dark:text-slate-300">
           <Star size={24} className="mr-2" />
           Redes Sociales
         </h2>
