@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useMemo, useRef, useState } from 'react'
 import {
   ListboxItem,
   Tooltip,
@@ -30,46 +30,55 @@ export const ListBox: React.FC<Partial<ListboxProps> & Props> = ({
     }, 1000)
   }
 
-  const ValueWrapper: React.FC<React.PropsWithChildren & { index: number }> = ({
-    children,
-    index,
-  }) =>
-    copiable ? (
-      <Tooltip
-        placement="right"
-        isOpen={itemCopied === index}
-        content="Copiado!"
-        motionProps={{
-          initial: { x: 0 },
-          animate: { x: -65 },
+  const memoizedItems = useMemo(() => {
+    return items.map((item, index) => (
+      <ListboxItem
+        {...item}
+        key={index}
+        onClick={(e) => {
+          if (copiable) {
+            navigator.clipboard.writeText(item.value?.toLocaleString() || '')
+            handleSetCopied(index)
+          }
+          item.onClick && item.onClick(e)
         }}
+        className="text-slate-100 dark:text-slate-300"
       >
-        {children}
-      </Tooltip>
-    ) : (
-      <>{children}</>
-    )
+        <ValueWrapper index={index} copiable={copiable} item={itemCopied}>
+          {item.value}
+        </ValueWrapper>
+      </ListboxItem>
+    ))
+  }, [items, copiable, itemCopied])
 
   return (
     <NextUIListbox className="p-0" {...props}>
-      {items.map((item, index) => (
-        <ListboxItem
-          {...item}
-          key={index}
-          onClick={(e) => {
-            if (copiable) {
-              navigator.clipboard.writeText(item.value?.toLocaleString() || '')
-              handleSetCopied(index)
-            }
-            item.onClick && item.onClick(e)
-          }}
-          className="text-slate-100 dark:text-slate-300"
-        >
-          <ValueWrapper index={index}>{item.value}</ValueWrapper>
-        </ListboxItem>
-      ))}
+      {memoizedItems}
     </NextUIListbox>
   )
 }
+
+const ValueWrapper: React.FC<
+  React.PropsWithChildren & {
+    copiable?: boolean
+    item?: React.Key
+    index: number
+  }
+> = ({ children, index, item, copiable }) =>
+  copiable ? (
+    <Tooltip
+      placement="right"
+      isOpen={item === index}
+      content="Copiado!"
+      motionProps={{
+        initial: { x: 0 },
+        animate: { x: -65 },
+      }}
+    >
+      {children}
+    </Tooltip>
+  ) : (
+    <>{children}</>
+  )
 
 export default ListBox
