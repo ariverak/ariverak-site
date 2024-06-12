@@ -6,7 +6,6 @@ import {
   Listbox as NextUIListbox,
   ListboxProps,
 } from '@nextui-org/react'
-import debounce from 'lodash.debounce'
 
 export interface Props {
   items: ListboxItemProps[]
