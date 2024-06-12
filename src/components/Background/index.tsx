@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import Particles, { initParticlesEngine } from '@tsparticles/react'
 import { loadSlim } from '@tsparticles/slim'
-
+import type { Container } from '@tsparticles/engine'
+import sleep from 'sleep-promise'
 import particlesConfig from '@/config/particles.json'
 
 const Background: React.FC<React.PropsWithChildren> = ({ children }) => {
@@ -13,6 +14,13 @@ const Background: React.FC<React.PropsWithChildren> = ({ children }) => {
     }).then(() => {
       setInit(true)
     })
+  }, [])
+
+  const particlesLoaded = useCallback(async (container?: Container) => {
+    if (container) {
+      await sleep(100)
+      container.play()
+    }
   }, [])
 
   return (
@@ -29,6 +37,7 @@ const Background: React.FC<React.PropsWithChildren> = ({ children }) => {
             pointerEvents: 'none',
           }}
           id="tsparticles"
+          particlesLoaded={particlesLoaded}
           options={particlesConfig as any}
         />
       )}

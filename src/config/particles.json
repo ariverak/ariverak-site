@@ -1,11 +1,11 @@
 {
-  "autoPlay": true,
+  "autoPlay": false,
   "fullScreen": {
     "enable": true,
     "zIndex": 0
   },
-  "detectRetina": true,
-  "fpsLimit": 120,
+  "detectRetina": false,
+  "fpsLimit": 30,
   "interactivity": {
     "events": {
       "onClick": {
@@ -22,26 +22,26 @@
   "particles": {
     "move": {
       "enable": true,
-      "speed": 2,
+      "speed": 0.5,
       "random": false,
       "straight": false
     },
     "number": {
       "density": {
         "enable": true,
-        "width": 1920,
-        "height": 1080
+        "width": 800,
+        "height": 800
       },
-      "value": 30
+      "value": 8
     },
     "opacity": {
       "value": {
-        "min": 0.1,
-        "max": 0.5
+        "min": 0.2,
+        "max": 0.4
       },
       "animation": {
         "enable": true,
-        "speed": 1,
+        "speed": 0.5,
         "sync": false,
         "startValue": "random"
       }
@@ -70,8 +70,8 @@
     },
     "size": {
       "value": {
-        "min": 10,
-        "max": 30
+        "min": 15,
+        "max": 25
       },
       "animation": {
         "enable": true,
@@ -86,5 +86,5 @@
   },
   "pauseOnBlur": true,
   "pauseOnOutsideViewport": true,
-  "zLayers": 100
+  "zLayers": 1
 }
