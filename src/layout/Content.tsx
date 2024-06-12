@@ -59,7 +59,7 @@ const Content: React.FC<ContentProps> = ({
         <div key={index} className="my-4">
           <h4 className="text-lg font-bold">{edu.university}</h4>
           <p className="text-sm font-semibold">{edu.career}</p>
-          <p className="text-xs text-gray-500">
+          <p className="text-xs text-slate-500 dark:text-slate-300">
             {edu.yearsBetween[0]} - {edu.yearsBetween[1]}
           </p>
         </div>
@@ -87,7 +87,7 @@ const Content: React.FC<ContentProps> = ({
               <h4 className="text-lg font-bold">{exp.workplace}</h4>
             </a>
             <p className="text-sm font-semibold">{exp.description}</p>
-            <p className="text-xs text-gray-500">
+            <p className="text-xs text-slate-500 dark:text-slate-300">
               {exp.yearsBetween[0]} - {exp.yearsBetween[1]}
             </p>
           </div>

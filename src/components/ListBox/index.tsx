@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import {
   ListboxItem,
   Tooltip,
@@ -6,7 +6,6 @@ import {
   Listbox as NextUIListbox,
   ListboxProps,
 } from '@nextui-org/react'
-import debounce from 'lodash.debounce'
 
 export interface Props {
   items: ListboxItemProps[]
@@ -19,10 +18,17 @@ export const ListBox: React.FC<Partial<ListboxProps> & Props> = ({
   ...props
 }) => {
   const [itemCopied, setItemCopied] = useState<React.Key | undefined>()
+  const timeoutRef = useRef<number | undefined>(undefined)
 
-  const setCopied = debounce(() => {
-    setItemCopied(undefined)
-  }, 2000)
+  const handleSetCopied = (index: number) => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current)
+    }
+    setItemCopied(index)
+    timeoutRef.current = window.setTimeout(() => {
+      setItemCopied(undefined)
+    }, 1000)
+  }
 
   const ValueWrapper: React.FC<React.PropsWithChildren & { index: number }> = ({
     children,
@@ -53,8 +59,7 @@ export const ListBox: React.FC<Partial<ListboxProps> & Props> = ({
           onClick={(e) => {
             if (copiable) {
               navigator.clipboard.writeText(item.value?.toLocaleString() || '')
-              setItemCopied(index)
-              setCopied()
+              handleSetCopied(index)
             }
             item.onClick && item.onClick(e)
           }}
