@@ -1,9 +1,13 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import React from 'react'
 import { Button, Tooltip } from '@nextui-org/react'
 import { PrinterIcon } from 'lucide-react'
 import { motion } from 'framer-motion'
+import { useTheme } from 'next-themes'
+import sleep from 'sleep-promise'
 
 const PrintButton = () => {
+  const { theme, setTheme } = useTheme()
   return (
     <Tooltip
       id="print"
@@ -22,8 +26,18 @@ const PrintButton = () => {
           isIconOnly
           color="warning"
           variant="faded"
-          onClick={() => {
-            document.getElementsByClassName('wrapper')[0].scrollTo(0, 0)
+          onClick={async () => {
+            const wrapper = document.getElementsByClassName('wrapper')[0]
+            wrapper.scrollTo(0, 0)
+            const t = theme
+            if (t === 'dark') {
+              setTheme('light')
+              await sleep(200)
+              window.print()
+              setTheme('dark')
+              return
+            }
+            await sleep(200)
             window.print()
           }}
         >
