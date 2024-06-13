@@ -7,7 +7,7 @@ import { useTheme } from 'next-themes'
 
 export interface SidebarProps {
   avatarUrl: string
-  about: string
+  about: string | React.ReactNode
   contact: { key: string; value: string }[]
   social: { icon: string; name: string; link: string }[]
 }
