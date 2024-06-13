@@ -7,7 +7,7 @@ import { useTheme } from 'next-themes'
 
 export interface SidebarProps {
   avatarUrl: string
-  about: string | React.ReactNode
+  about: (string | React.ReactNode)[]
   contact: { key: string; value: string }[]
   social: { icon: string; name: string; link: string }[]
 }
@@ -68,9 +68,14 @@ const Sidebar: React.FC<SidebarProps> = ({
         className="mt-[-48px] h-24 w-full fill-slate-500 dark:fill-slate-900"
       />
       <div className="p-4">
-        <p className="text-left text-sm text-slate-100 dark:text-slate-300">
-          {about}
-        </p>
+        {about.map((value, i) => (
+          <p
+            key={i}
+            className="mb-4 text-left text-sm text-slate-100 dark:text-slate-300"
+          >
+            {value}
+          </p>
+        ))}
         <Spacer y={8} />
         <h2 className="mb-4 flex items-center text-lg font-bold text-slate-100 dark:text-slate-300">
           <Star size={24} className="mr-2" />

@@ -6,19 +6,17 @@ const WorkPortfolio: React.FC = () => {
     <Layout>
       <Layout.Sidebar
         avatarUrl="/me.png"
-        about={
+        about={[
           <>
             Desarrollador de JavaScript apasionado y altamente experimentado,
             con
             <span className="font-bold text-white">
               {' +7 años de experiencia '}
             </span>
-            en el diseño y desarrollo de soluciones web innovadoras. Me
-            especializo en la creación de aplicaciones web y móviles de alto
-            rendimiento utilizando ReactJS y tengo un sólido conocimiento del
-            backend a través de NodeJS.
-          </>
-        }
+            en el diseño y desarrollo de soluciones web innovadoras.
+          </>,
+          'Me especializo en la creación de aplicaciones web y móviles de alto rendimiento utilizando ReactJS y tengo un sólido conocimiento del backend a través de NodeJS.',
+        ]}
         contact={[
           { key: 'Correo Personal', value: 'jrivera.v@outlook.com' },
           { key: 'Correo Electrónico', value: 'jrivera@abaqus.cl' },
