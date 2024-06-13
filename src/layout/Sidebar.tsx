@@ -3,6 +3,7 @@ import { Avatar, Spacer, Image } from '@nextui-org/react'
 import Wave from 'react-wavify'
 import { Star, AtSign, icons } from 'lucide-react'
 import ListBox from '@/components/ListBox'
+import { useTheme } from 'next-themes'
 
 export interface SidebarProps {
   avatarUrl: string
@@ -25,6 +26,7 @@ const Sidebar: React.FC<SidebarProps> = ({
   contact,
   social,
 }) => {
+  const { theme } = useTheme()
   const contactItems = useMemo(
     () =>
       contact.map((c) => ({
@@ -54,7 +56,7 @@ const Sidebar: React.FC<SidebarProps> = ({
         <Avatar
           className="mt-32 h-40 w-40"
           classNames={{
-            base: 'bg-white',
+            base: theme === 'dark' ? 'space-bg' : 'bg-slate-200',
           }}
           ImgComponent={Image}
           src={avatarUrl}

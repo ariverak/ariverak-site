@@ -45,7 +45,7 @@ const Content: React.FC<ContentProps> = ({
           size="lg"
           className="h-auto w-[75px] min-w-[75px] max-w-[75px] md:hidden"
           classNames={{
-            base: 'bg-white',
+            base: 'bg-slate-200',
           }}
         />
       </div>

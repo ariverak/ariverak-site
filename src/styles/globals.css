@@ -6,6 +6,14 @@ html, body {
   background: #232741 !important;
 }
 
+.space-bg {
+  background-color: #0f172a;
+  background-image: url('/space.gif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 @media print {
   @page {
       /* A4 */
