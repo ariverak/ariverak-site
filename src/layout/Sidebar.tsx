@@ -1,7 +1,7 @@
-import React, { Suspense, lazy, useMemo } from 'react'
+import React, { useMemo } from 'react'
 import { Avatar, Spacer, Image } from '@nextui-org/react'
 import Wave from 'react-wavify'
-import { Star, AtSign } from 'lucide-react'
+import { Star, AtSign, icons } from 'lucide-react'
 import ListBox from '@/components/ListBox'
 
 export interface SidebarProps {
@@ -37,19 +37,11 @@ const Sidebar: React.FC<SidebarProps> = ({
   const socialItems = useMemo(
     () =>
       social.map((s) => {
-        const Icon = lazy(() =>
-          import('lucide-react').then((module) => ({
-            default: module.icons[s.icon as keyof typeof module.icons],
-          }))
-        )
+        const Icon = icons[s.icon as keyof typeof icons]
         return {
           value: s.name,
           key: s.link,
-          startContent: (
-            <Suspense fallback={null}>
-              <Icon size={16} />
-            </Suspense>
-          ),
+          startContent: <Icon size={16} />,
           href: s.link,
           target: '_blank',
         }
