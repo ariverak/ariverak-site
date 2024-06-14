@@ -1,7 +1,10 @@
 import React from 'react'
 import Layout from '@/layout'
+import { useTranslations } from 'next-intl'
 
 const WorkPortfolio: React.FC = () => {
+  const t = useTranslations()
+
   return (
     <Layout>
       <Layout.Sidebar
@@ -41,8 +44,8 @@ const WorkPortfolio: React.FC = () => {
         ]}
       />
       <Layout.Content
-        title="Juan Andrés Rivera"
-        subtitle="Ingeniero de software"
+        title={t('title')}
+        subtitle={t('subtitle')}
         avatarUrl="/me.png"
         email="jrivera.v@outlook.com"
         education={[
