@@ -1,3 +1,5 @@
+import withNextIntl from 'next-intl/plugin';
+
 export const IS_PRODUCTION = process.env.NODE_ENV === 'production';
 
 /** @type {import('next').NextConfig} */
@@ -8,4 +10,4 @@ const nextConfig = {
     }
 };
 
-export default nextConfig;
+export default withNextIntl('./src/translation')(nextConfig);

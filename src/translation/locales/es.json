@@ -1,0 +1,23 @@
+{
+  "title": "Juan Andrés Rivera",
+  "subtitle": "Ingeniero de software",
+  "aboutP1": "Desarrollador de JavaScript apasionado y altamente experimentado, con <b> +7 años de experiencia </b> en el diseño y desarrollo de soluciones web innovadoras.",
+  "aboutP2": "Me especializo en la creación de aplicaciones web y móviles de alto rendimiento utilizando ReactJS y tengo un sólido conocimiento del backend a través de NodeJS.",
+  "contact": "Contacto",
+  "socialNetworks": "Redes Sociales",
+  "education": {
+    "title": "Educación",
+    "university": "Instituto Profesional AIEP",
+    "career": "Ingeniería de Ejecución en Informática."
+  },
+  "experience": {
+    "title": "Experiencia Profesional",
+    "abaqus": "Ingeniero Fullstack en el equipo de desarrollo de soluciones.",
+    "smertgroup": "Desarrollador del eco sistema de aplicaciones de la empresa.",
+    "rappi": "Ingeniero frontend en el equipo de inventario de rappi turbo.",
+    "drivetech": "Desarrollador de aplicaciones en tiempo real con React.",
+    "soho": "Desarrollador fullstack para consultora UX.",
+    "groupbi": "Encargado de llevar acabo el análisis y desarrollo de aplicaciones web.",
+    "cooprinsem": "Desarrollador de Software para el área agrícola de Osorno."
+  }
+}

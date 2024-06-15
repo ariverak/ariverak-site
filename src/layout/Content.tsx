@@ -1,6 +1,7 @@
 import React from 'react'
 import { Avatar, Divider, Image } from '@nextui-org/react'
 import { GraduationCap, Laptop, Mail } from 'lucide-react'
+import { useTranslations } from 'next-intl'
 
 export interface ContentProps {
   title: string
@@ -29,6 +30,7 @@ const Content: React.FC<ContentProps> = ({
   education,
   experience,
 }) => {
+  const t = useTranslations()
   return (
     <div className="flex-1 bg-white px-2 pt-12 dark:bg-slate-700 sm:px-8 md:pt-24">
       <div className="flex items-center justify-between">
@@ -53,7 +55,7 @@ const Content: React.FC<ContentProps> = ({
       {/* education */}
       <h3 className="mb-4 flex items-center text-lg font-semibold">
         <GraduationCap size={24} className="mr-2" />
-        Educación
+        {t('education.title')}
       </h3>
       {education.map((edu, index) => (
         <div key={index} className="my-4">
@@ -68,7 +70,7 @@ const Content: React.FC<ContentProps> = ({
       {/* profesional experience */}
       <h3 className="mb-4 flex items-center text-lg font-semibold">
         <Laptop size={24} className="mr-2" />
-        Experiencia Profesional
+        {t('experience.title')}
       </h3>
       {experience.map((exp, index) => (
         <div key={index} className="my-4 flex items-center">
