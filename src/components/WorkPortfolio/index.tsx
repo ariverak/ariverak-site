@@ -1,29 +1,25 @@
 import React from 'react'
 import Layout from '@/layout'
-import { useTranslations } from 'next-intl'
+import { useTranslations, useFormatter } from 'next-intl'
 
 const WorkPortfolio: React.FC = () => {
   const t = useTranslations()
-
   return (
     <Layout>
       <Layout.Sidebar
         avatarUrl="/me.png"
         about={[
-          <>
-            Desarrollador de JavaScript apasionado y altamente experimentado,
-            con
-            <span className="font-bold text-white">
-              {' +7 años de experiencia '}
-            </span>
-            en el diseño y desarrollo de soluciones web innovadoras.
-          </>,
-          'Me especializo en la creación de aplicaciones web y móviles de alto rendimiento utilizando ReactJS y tengo un sólido conocimiento del backend a través de NodeJS.',
+          t.rich('aboutP1', {
+            b: (children) => (
+              <span className="font-bold text-white">{children}</span>
+            ),
+          }),
+          t('aboutP2'),
         ]}
-        contact={[
-          { key: 'Correo Personal', value: 'jrivera.v@outlook.com' },
-          { key: 'Correo Electrónico', value: 'jrivera@abaqus.cl' },
-          { key: 'Correo Electrónico', value: 'arivera@smertgroup.com' },
+        emails={[
+          'jrivera.v@outlook.com',
+          'jrivera@abaqus.cl',
+          'arivera@smertgroup.com',
         ]}
         social={[
           {
@@ -50,31 +46,30 @@ const WorkPortfolio: React.FC = () => {
         email="jrivera.v@outlook.com"
         education={[
           {
-            university: 'Instituto Profesional AIEP',
+            university: t('education.university'),
             yearsBetween: [2014, 2017],
-            career: 'Ingeniería de Ejecución en Informática.',
+            career: t('education.career'),
           },
         ]}
         experience={[
           {
             workplace: 'Abaqus',
             yearsBetween: [2024, 'Actualidad'],
-            description: `Ingeniero Fullstack en el equipo de desarrollo de soluciones.`,
+            description: t('experience.abaqus'),
             logo: '/companies/abaqus.png',
             link: 'https://abaqus.cl/solutions/',
           },
           {
             workplace: 'SmertGroup',
             yearsBetween: [2021, new Date().getFullYear()],
-            description:
-              'Desarrollador del eco sistema de aplicaciones de la empresa.',
+            description: t('experience.smertgroup'),
             logo: '/companies/smertgroup.png',
             link: 'https://smertgroup.com/',
           },
           {
             workplace: 'Rappi',
             yearsBetween: [2021, 2024],
-            description: `Ingeniero frontend en el equipo de inventario de rappi turbo.`,
+            description: t('experience.rappi'),
             logo: '/companies/rappi.png',
             link: 'https://www.rappi.com/',
           },
@@ -82,29 +77,27 @@ const WorkPortfolio: React.FC = () => {
           {
             workplace: 'Drivetech',
             yearsBetween: [2020, 2021],
-            description: `Desarrollador de aplicaciones en tiempo real con React.`,
+            description: t('experience.drivetech'),
             logo: '/companies/drivetech.png',
             link: 'https://www.drivetech.pro/',
           },
           {
             workplace: 'Soho',
             yearsBetween: [2019, 2020],
-            description: 'Desarrollador fullstack para consultora UX.',
+            description: t('experience.soho'),
             logo: '/companies/soho.png',
             link: 'https://soho.cl/',
           },
           {
             workplace: 'GroupBI',
             yearsBetween: [2018, 2019],
-            description:
-              'Encargado de llevar acabo el análisis y desarrollo de aplicaciones web.',
+            description: t('experience.groupbi'),
             logo: '/companies/groupbi.png',
           },
           {
             workplace: 'Cooprinsem',
             yearsBetween: [2016, 2017],
-            description:
-              'Desarrollador de Software para el área agrícola de Osorno.',
+            description: t('experience.cooprinsem'),
             logo: '/companies/cooprinsem.png',
             link: 'https://www.cooprinsem.cl/',
           },

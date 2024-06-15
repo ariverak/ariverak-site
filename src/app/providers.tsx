@@ -1,13 +1,22 @@
 import React from 'react'
 import { NextUIProvider } from '@nextui-org/react'
 import { ThemeProvider as NextThemesProvider } from 'next-themes'
+import { AbstractIntlMessages, NextIntlClientProvider } from 'next-intl'
 
-export function Providers({ children }: { children: React.ReactNode }) {
+interface IProps {
+  children: React.ReactNode
+  messages: AbstractIntlMessages
+  locale?: string
+}
+
+export function Providers({ children, messages, locale }: IProps) {
   return (
-    <NextUIProvider>
-      <NextThemesProvider attribute="class" defaultTheme="light">
-        {children}
-      </NextThemesProvider>
-    </NextUIProvider>
+    <NextIntlClientProvider messages={messages} locale={locale}>
+      <NextUIProvider>
+        <NextThemesProvider attribute="class" defaultTheme="light">
+          {children}
+        </NextThemesProvider>
+      </NextUIProvider>
+    </NextIntlClientProvider>
   )
 }

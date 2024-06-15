@@ -1,0 +1,23 @@
+{
+  "title": "Juan Andrés Rivera",
+  "subtitle": "Software Engineer",
+  "aboutP1": "Passionate and highly experienced JavaScript developer, with <b> +7 years of experience </b> in designing and developing innovative web solutions.",
+  "aboutP2": "I specialize in creating high-performance web and mobile applications using ReactJS and have a solid knowledge of backend through NodeJS.",
+  "contact": "Contact",
+  "socialNetworks": "Social Networks",
+  "education": {
+    "title": "Education",
+    "university": "Professional Institute AIEP",
+    "career": "Computer Engineering."
+  },
+  "experience": {
+    "title": "Professional Experience",
+    "abaqus": "Fullstack Engineer in the solution development team.",
+    "smertgroup": "Developer of the company's application ecosystem.",
+    "rappi": "Frontend engineer in the inventory team of Rappi Turbo.",
+    "drivetech": "Real-time application developer with React.",
+    "soho": "Fullstack developer for UX consulting.",
+    "groupbi": "In charge of carrying out the analysis and development of web applications.",
+    "cooprinsem": "Software Developer for the agricultural area of Osorno."
+  }
+}

@@ -1,7 +1,6 @@
 import React from 'react'
 import type { Metadata, Viewport } from 'next'
 import { Providers } from '@/app/providers'
-import { NextIntlClientProvider } from 'next-intl'
 import { getLocale, getMessages } from 'next-intl/server'
 import '@/styles/globals.css'
 
@@ -25,9 +24,7 @@ export default async function RootLayout({
   return (
     <html lang={locale}>
       <body suppressHydrationWarning>
-        <NextIntlClientProvider messages={messages}>
-          <Providers>{children}</Providers>
-        </NextIntlClientProvider>
+        <Providers messages={messages}>{children}</Providers>
       </body>
     </html>
   )

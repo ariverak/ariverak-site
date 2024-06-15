@@ -4,11 +4,12 @@ import Wave from 'react-wavify'
 import { Star, AtSign, icons } from 'lucide-react'
 import ListBox from '@/components/ListBox'
 import { useTheme } from 'next-themes'
+import { useTranslations } from 'next-intl'
 
 export interface SidebarProps {
   avatarUrl: string
   about: (string | React.ReactNode)[]
-  contact: { key: string; value: string }[]
+  emails: string[]
   social: { icon: string; name: string; link: string }[]
 }
 
@@ -23,18 +24,19 @@ export const ListboxWrapper: React.FC<React.PropsWithChildren> = ({
 const Sidebar: React.FC<SidebarProps> = ({
   avatarUrl,
   about,
-  contact,
+  emails,
   social,
 }) => {
+  const t = useTranslations()
   const { theme } = useTheme()
   const contactItems = useMemo(
     () =>
-      contact.map((c) => ({
-        value: c.value,
-        key: c.key,
+      emails.map((email, i) => ({
+        key: i,
+        value: email,
         startContent: <AtSign size={16} />,
       })),
-    [contact]
+    [emails]
   )
   const socialItems = useMemo(
     () =>
@@ -79,14 +81,14 @@ const Sidebar: React.FC<SidebarProps> = ({
         <Spacer y={8} />
         <h2 className="mb-4 flex items-center text-lg font-bold text-slate-100 dark:text-slate-300">
           <Star size={24} className="mr-2" />
-          Contacto
+          {t('contact')}
         </h2>
         <ListBox items={contactItems} copiable />
 
         <Spacer y={8} />
         <h2 className="mb-4 flex items-center text-lg font-bold text-slate-100 dark:text-slate-300">
           <Star size={24} className="mr-2" />
-          Redes Sociales
+          {t('socialNetworks')}
         </h2>
         <ListBox items={socialItems} />
       </div>

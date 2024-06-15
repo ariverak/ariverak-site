@@ -10,4 +10,4 @@ const nextConfig = {
     }
 };
 
-export default withNextIntl('./src/i18n')(nextConfig);
+export default withNextIntl('./src/translation')(nextConfig);
