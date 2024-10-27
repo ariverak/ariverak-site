@@ -6,6 +6,7 @@ export default getRequestConfig(async () => {
   const locale = cookie?.value || 'es'
   return {
     locale,
+    timeZone: 'UTC',
     messages: (await import(`./locales/${locale}.json`)).default,
   }
 })

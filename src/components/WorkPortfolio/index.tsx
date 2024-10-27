@@ -1,6 +1,6 @@
 import React from 'react'
 import Layout from '@/layout'
-import { useTranslations, useFormatter } from 'next-intl'
+import { useTranslations } from 'next-intl'
 
 const WorkPortfolio: React.FC = () => {
   const t = useTranslations()
@@ -13,6 +13,7 @@ const WorkPortfolio: React.FC = () => {
             b: (children) => (
               <span className="font-bold text-white">{children}</span>
             ),
+            text: () => new Date().getFullYear() - 2016,
           }),
           t('aboutP2'),
         ]}
