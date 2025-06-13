@@ -17,9 +17,7 @@ const WorkPortfolio: React.FC = () => {
           }),
           t('aboutP2'),
         ]}
-        emails={[
-          'jrivera.v@outlook.com',
-        ]}
+        emails={['jrivera.v@outlook.com']}
         social={[
           {
             icon: 'Github',
