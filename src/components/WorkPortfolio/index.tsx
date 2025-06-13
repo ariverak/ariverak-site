@@ -19,8 +19,6 @@ const WorkPortfolio: React.FC = () => {
         ]}
         emails={[
           'jrivera.v@outlook.com',
-          'jrivera@abaqus.cl',
-          'arivera@smertgroup.com',
         ]}
         social={[
           {
@@ -53,20 +51,6 @@ const WorkPortfolio: React.FC = () => {
           },
         ]}
         experience={[
-          {
-            workplace: 'Abaqus',
-            yearsBetween: [2024, 'Actualidad'],
-            description: t('experience.abaqus'),
-            logo: '/companies/abaqus.png',
-            link: 'https://abaqus.cl/solutions/',
-          },
-          {
-            workplace: 'SmertGroup',
-            yearsBetween: [2021, new Date().getFullYear()],
-            description: t('experience.smertgroup'),
-            logo: '/companies/smertgroup.png',
-            link: 'https://smertgroup.com/',
-          },
           {
             workplace: 'Rappi',
             yearsBetween: [2021, 2024],
