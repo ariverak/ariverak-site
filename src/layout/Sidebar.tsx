@@ -62,6 +62,7 @@ const Sidebar: React.FC<SidebarProps> = ({
           }}
           ImgComponent={Image}
           src={avatarUrl}
+          alt="Juan Andrés Rivera - Software Engineer"
         />
       </div>
       <Wave

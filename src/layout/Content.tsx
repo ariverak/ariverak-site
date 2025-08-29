@@ -49,6 +49,7 @@ const Content: React.FC<ContentProps> = ({
           classNames={{
             base: 'bg-slate-200',
           }}
+          alt={`${title} - ${subtitle}`}
         />
       </div>
       <Divider className="my-4" />
@@ -83,6 +84,7 @@ const Content: React.FC<ContentProps> = ({
               base: 'bg-white',
             }}
             ImgComponent={Image}
+            alt={`${exp.workplace} logo`}
           />
           <div className="ml-4">
             <a href={exp.link} target="_blank" rel="noreferrer">
