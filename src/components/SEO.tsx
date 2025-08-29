@@ -28,7 +28,7 @@ const SEO: React.FC<SEOProps> = ({
     'Full Stack Developer',
     'Brikl',
     'Rappi',
-    'Chile'
+    'Chile',
   ],
   image = '/me.png',
   url = 'https://ariverak.com',
@@ -37,11 +37,15 @@ const SEO: React.FC<SEOProps> = ({
   publishedTime,
   modifiedTime,
   section,
-  tags = []
+  tags = [],
 }) => {
-  const fullTitle = title.includes('Juan Andrés Rivera') ? title : `${title} | Juan Andrés Rivera`
+  const fullTitle = title.includes('Juan Andrés Rivera')
+    ? title
+    : `${title} | Juan Andrés Rivera`
   const fullUrl = url.startsWith('http') ? url : `https://ariverak.com${url}`
-  const fullImage = image.startsWith('http') ? image : `https://ariverak.com${image}`
+  const fullImage = image.startsWith('http')
+    ? image
+    : `https://ariverak.com${image}`
 
   return (
     <Head>
@@ -50,10 +54,10 @@ const SEO: React.FC<SEOProps> = ({
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords.join(', ')} />
       <meta name="author" content={author} />
-      
+
       {/* Canonical URL */}
       <link rel="canonical" href={fullUrl} />
-      
+
       {/* Open Graph */}
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
@@ -62,27 +66,32 @@ const SEO: React.FC<SEOProps> = ({
       <meta property="og:type" content={type} />
       <meta property="og:site_name" content="Juan Andrés Rivera Portfolio" />
       <meta property="og:locale" content="en_US" />
-      
+
       {/* Twitter Card */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={fullImage} />
       <meta name="twitter:creator" content="@ariverak" />
-      
+
       {/* Article specific meta tags */}
       {type === 'article' && (
         <>
-          {publishedTime && <meta property="article:published_time" content={publishedTime} />}
-          {modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
+          {publishedTime && (
+            <meta property="article:published_time" content={publishedTime} />
+          )}
+          {modifiedTime && (
+            <meta property="article:modified_time" content={modifiedTime} />
+          )}
           {author && <meta property="article:author" content={author} />}
           {section && <meta property="article:section" content={section} />}
-          {tags.length > 0 && tags.map((tag, index) => (
-            <meta key={index} property="article:tag" content={tag} />
-          ))}
+          {tags.length > 0 &&
+            tags.map((tag, index) => (
+              <meta key={index} property="article:tag" content={tag} />
+            ))}
         </>
       )}
-      
+
       {/* Additional SEO meta tags */}
       <meta name="robots" content="index, follow" />
       <meta name="googlebot" content="index, follow" />
