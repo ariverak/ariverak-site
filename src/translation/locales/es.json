@@ -5,6 +5,7 @@
   "aboutP2": "Me especializo en la creación de aplicaciones web y móviles de alto rendimiento utilizando ReactJS y tengo un sólido conocimiento del backend a través de NodeJS.",
   "contact": "Contacto",
   "socialNetworks": "Redes Sociales",
+  "actuality": "Actualidad",
   "education": {
     "title": "Educación",
     "university": "Instituto Profesional AIEP",
@@ -12,6 +13,7 @@
   },
   "experience": {
     "title": "Experiencia Profesional",
+    "brikl": "Ingeniero Frontend Senior",
     "abaqus": "Ingeniero Fullstack en el equipo de desarrollo de soluciones.",
     "smertgroup": "Desarrollador del eco sistema de aplicaciones de la empresa.",
     "rappi": "Ingeniero frontend en el equipo de inventario de rappi turbo.",

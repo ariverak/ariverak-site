@@ -50,6 +50,20 @@ const WorkPortfolio: React.FC = () => {
         ]}
         experience={[
           {
+            workplace: 'Brikl',
+            yearsBetween: [2025, t('actuality')],
+            description: t('experience.brikl'),
+            logo: '/companies/brikl.svg',
+            link: 'https://brikl.com/',
+          },
+          {
+            workplace: 'Abaqus',
+            yearsBetween: [2024, 2025],
+            description: t('experience.abaqus'),
+            logo: '/companies/abaqus.png',
+            link: 'https://abaqus.cl/',
+          },
+          {
             workplace: 'Rappi',
             yearsBetween: [2021, 2024],
             description: t('experience.rappi'),
